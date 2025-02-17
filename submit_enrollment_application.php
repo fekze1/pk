@@ -12,6 +12,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 $type_application = $input['type_application'] ?? '';
 $applicant_id = $_SESSION['user_id'];
 $faculty_id = $input['faculty_id'] ?? '';
+$total_score = $input['total_score'] ?? '';
 
 if (!$type_application || !$faculty_id) {
     echo json_encode(['success' => false, 'message' => 'Недостаточно данных']);
@@ -22,8 +23,8 @@ require_once 'includes/db.php';
 
 try {
     // Создаем новую заявку на зачисление
-    $stmt = $pdo->prepare("INSERT INTO Application (type_application, applicant_id, faculty_id, status_application) VALUES (?, ?, ?, 'ACTIVE')");
-    $stmt->execute([$type_application, $applicant_id, $faculty_id]);
+    $stmt = $pdo->prepare("INSERT INTO Application (type_application, applicant_id, faculty_id, total_score, status_application) VALUES (?, ?, ?, ?, 'ACTIVE')");
+    $stmt->execute([$type_application, $applicant_id, $faculty_id, $total_score]);
 
     // Закрываем исходную заявку
     $closeStmt = $pdo->prepare("UPDATE Application SET status_application = 'CLOSED' WHERE applicant_id = ? AND faculty_id = ? AND status_application = 'ACCEPTED'");

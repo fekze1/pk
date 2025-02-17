@@ -15,7 +15,7 @@ require_once 'includes/db.php';
 try {
     // SQL-запрос с фильтрацией по статусу и типам заявок
     $stmt = $pdo->prepare("
-        SELECT type_application, faculty_id
+        SELECT type_application, faculty_id, total_score
         FROM Application 
         WHERE applicant_id = ? 
           AND status_application = 'ACCEPTED'

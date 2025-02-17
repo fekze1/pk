@@ -426,3 +426,63 @@ footer nav ul li a:hover {
 .consider-button:hover {
     background-color: #165aa8;
 }
+
+/* Стили для выпадающего списка статусов */
+.status-change-menu {
+    position: absolute; /* Позиционируем относительно кнопки */
+    top: 100%; /* Размещаем под кнопкой */
+    left: 0; /* Выравниваем по левому краю кнопки */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1001;
+    min-width: 200px; /* Минимальная ширина списка */
+}
+
+.status-option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.status-option:hover {
+    background-color: #f0f8ff;
+}
+
+.change-status-button {
+    position: relative; /* Делаем кнопку родителем для выпадающего списка */
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.change-status-button:hover {
+    background-color: #155ab0;
+}
+/* Увеличиваем ширину модального окна для "Мои заявки" */
+.modal-container.larger-modal {
+    max-width: 1200px; /* Увеличиваем максимальную ширину */
+}
+
+/* Увеличиваем ширину контейнера с заявками */
+.scrollable-container {
+    max-height: 600px; /* Увеличиваем высоту скролла */
+    overflow-y: auto;
+}
+/* Стили для поля "Тип заявки" */
+.application-item p strong {
+    font-weight: bold;
+    color: #1a73e8;
+}

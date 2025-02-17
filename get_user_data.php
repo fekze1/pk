@@ -14,7 +14,6 @@ require_once 'includes/db.php'; // Подключение к базе данны
 
 try {
     if ($role === 'applicant') {
-        // Запрос для абитуриента (не трогаем)
         $stmt = $pdo->prepare("
             SELECT 
                 a.fullname AS fullname, 

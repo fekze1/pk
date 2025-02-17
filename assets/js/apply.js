@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             
                             break;
                         case 2:
-                            
+                            openMyEmployeeApplicationsModal();
                             break;
                     }
                 }   
@@ -376,6 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
     // Логика отправки данных заявки на вступительные экзамены
     document.getElementById('exam-application-form')?.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -431,6 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     item.className = 'application-item';
                     item.dataset.type = application.type_application;
                     item.dataset.facultyId = application.faculty_id;
+                    item.dataset.totalScore = application.total_score;
 
                     // Получаем название факультета
                     const facultyName = await getFacultyName(application.faculty_id);
@@ -438,9 +440,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Перевод типа заявки
                     const typeTranslation = translateApplicationType(application.type_application);
 
+                    const totalScore = application.total_score;
+
                     item.innerHTML = `
                         <p><strong>Тип заявки:</strong> ${typeTranslation}</p>
                         <p><strong>Факультет:</strong> ${facultyName}</p>
+                        <p><strong>Баллы ЕГЭ:</strong> ${totalScore}</p>
                     `;
                     container.appendChild(item);
 
@@ -469,6 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const typeApplication = selectedApplication.dataset.type;
         const facultyId = selectedApplication.dataset.facultyId;
+        const totalScore = selectedApplication.dataset.totalScore;
         let enrollmentType;
     
         // Определяем тип заявки на зачисление
@@ -497,7 +503,8 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({
                 applicant_id: sessionStorage.getItem('user_id'),
                 type_application: enrollmentType,
-                faculty_id: facultyId
+                faculty_id: facultyId,
+                total_score: totalScore
             })
         })
         .then(response => response.json())
@@ -684,6 +691,233 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Функция для открытия модального окна с моими заявками
+    function openMyEmployeeApplicationsModal() {
+        const modal = document.createElement('div');
+        modal.id = 'my-applications-modal';
+        modal.className = 'modal-overlay';
+
+        const modalContainer = document.createElement('div');
+        modalContainer.className = 'modal-container larger-modal';
+
+        const modalTitle = document.createElement('h2');
+        modalTitle.textContent = 'Мои заявки';
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'close-modal';
+        closeButton.textContent = 'Закрыть';
+
+        const applicationsContainer = document.createElement('div');
+        applicationsContainer.className = 'scrollable-container';
+
+        // Добавляем заголовок, контейнер и кнопку закрытия
+        modalContainer.appendChild(modalTitle);
+        modalContainer.appendChild(applicationsContainer);
+        modalContainer.appendChild(closeButton);
+
+        modal.appendChild(modalContainer);
+        document.body.appendChild(modal);
+
+        // Загружаем заявки
+        loadMyApplications(applicationsContainer);
+
+        // Закрытие модального окна при клике вне формы или на кнопку "Закрыть"
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === closeButton) {
+                modal.remove();
+            }
+        });
+    }
+
+    // Функция для загрузки заявок сотрудника
+    async function loadMyApplications(container) {
+        try {
+            const response = await fetch('/PK/get_my_employee_apps.php');
+            const data = await response.json();
+
+            if (data.success && data.applications.length > 0) {
+                container.innerHTML = ''; // Очищаем контейнер
+
+                data.applications.forEach(application => {
+                    const item = document.createElement('div');
+                    item.className = 'application-item';
+                    item.setAttribute('data-application-id', application.application_id); // Добавляем ID заявки
+
+                    // Переводим тип заявки в понятный текст
+                    const typeApplicationText = translateApplicationType(application.type_application);
+
+                    // Формируем HTML для заявки
+                    item.innerHTML = `
+                        <p><strong>ФИО:</strong> ${application.applicant_fullname}</p>
+                        <p><strong>Статус:</strong> ${translateApplicationStatus(application.status_application)}</p>
+                        <p><strong>Тип заявки:</strong> ${typeApplicationText}</p>
+                        <p><strong>Факультет:</strong> ${application.name_faculty}</p>
+                        <p><strong>Баллы ЕГЭ:</strong> ${application.total_score}</p>
+                        <p><strong>Льготы:</strong> ${application.benefits || 'Нет льгот'}</p>
+                        <span class="arrow-icon">▶</span>
+                    `;
+
+                    // Обработчик для стрелки
+                    const arrowIcon = item.querySelector('.arrow-icon');
+                    arrowIcon.addEventListener('click', () => {
+                        openApplicationDetailsModal(application);
+                    });
+
+                    container.appendChild(item);
+                });
+            } else {
+                container.innerHTML = '<p>У вас нет присвоенных заявок</p>';
+            }
+        } catch (error) {
+            console.error('Ошибка при загрузке заявок:', error);
+            container.innerHTML = '<p>Произошла ошибка при загрузке заявок.</p>';
+        }
+    }
+
+    // Функция для открытия модального окна с детальной информацией по заявке
+    function openApplicationDetailsModal(application) {
+        const modal = document.createElement('div');
+        modal.id = 'application-details-modal';
+        modal.className = 'modal-overlay';
+
+        const modalContainer = document.createElement('div');
+        modalContainer.className = 'modal-container larger-modal';
+
+        const modalTitle = document.createElement('h2');
+        modalTitle.textContent = 'Детали заявки';
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'close-modal';
+        closeButton.textContent = 'Закрыть';
+
+        const detailsContainer = document.createElement('div');
+        detailsContainer.className = 'details-container';
+
+        // Формируем содержимое модального окна
+        let detailsHTML = `
+            <p><strong>ФИО абитуриента:</strong> ${application.applicant_fullname}</p>
+            <p><strong>Статус:</strong> ${translateApplicationStatus(application.status_application)}</p>
+            <p><strong>Тип заявки:</strong> ${translateApplicationType(application.type_application)}</p>
+            <p><strong>Факультет:</strong> ${application.name_faculty}</p>
+            <p><strong>Баллы ЕГЭ:</strong> ${application.total_score}</p>
+            <p><strong>Льготы:</strong> ${application.benefits || 'Нет льгот'}</p>
+        `;
+
+        detailsContainer.innerHTML = detailsHTML;
+
+        // Добавляем кнопку изменения статуса
+        const changeStatusButton = document.createElement('button');
+        changeStatusButton.className = 'change-status-button';
+        changeStatusButton.textContent = 'Изменить статус';
+
+        modalContainer.appendChild(modalTitle);
+        modalContainer.appendChild(detailsContainer);
+        modalContainer.appendChild(changeStatusButton);
+        modalContainer.appendChild(closeButton);
+
+        modal.appendChild(modalContainer);
+        document.body.appendChild(modal);
+
+        // Закрытие модального окна при клике вне формы или на кнопку "Закрыть"
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === closeButton) {
+                modal.remove();
+            }
+        });
+
+        // Обработчик для кнопки изменения статуса
+        changeStatusButton.addEventListener('click', (e) => {
+            showStatusChangeMenu(application.application_id, e.target, application.type_application); // Передаем тип заявки
+        });
+    }
+
+    // Функция для показа меню изменения статуса
+    function showStatusChangeMenu(applicationId, button, applicationType) {
+        const menu = document.createElement('div');
+        menu.className = 'status-change-menu';
+
+        // Определяем доступные статусы в зависимости от типа заявки
+        let options = [];
+        if (applicationType.includes('WITHOUT TESTS') || applicationType.includes('ENROLLMENT')) {
+            options = [
+                { label: 'Принять', value: 'ACCEPTED' },
+                { label: 'Отклонить', value: 'REJECTED' }
+            ];
+        } else {
+            options = [
+                { label: 'Принять', value: 'ACCEPTED' },
+                { label: 'Отклонить', value: 'REJECTED' },
+                { label: 'Направить на экзамены', value: 'SENT TO EXAMS' }
+            ];
+        }
+
+        options.forEach(option => {
+            const optionButton = document.createElement('button');
+            optionButton.textContent = option.label;
+            optionButton.className = 'status-option';
+            optionButton.addEventListener('click', () => {
+                updateApplicationStatus(applicationId, option.value).then(() => {
+                    menu.remove(); // Удаляем меню после выбора статуса
+                    loadMyApplications(document.getElementById('active-applications-container')); // Обновляем интерфейс
+                });
+            });
+            menu.appendChild(optionButton);
+        });
+
+        // Позиционируем меню относительно кнопки
+        const buttonRect = button.getBoundingClientRect();
+        menu.style.position = 'absolute';
+        menu.style.top = `${buttonRect.bottom + window.scrollY}px`; // Под кнопкой
+        menu.style.left = `${buttonRect.left + window.scrollX}px`; // По левому краю кнопки
+
+        document.body.appendChild(menu);
+
+        // Удаляем меню при клике вне его области
+        const handleClickOutside = (e) => {
+            if (!menu.contains(e.target) && e.target !== button) {
+                menu.remove();
+                document.removeEventListener('click', handleClickOutside);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+    }
+
+    // Функция для обновления статуса заявки
+    async function updateApplicationStatus(applicationId, newStatus) {
+        try {
+            const response = await fetch('/PK/update_application_status.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ application_id: applicationId, status: newStatus })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                showNotification('Статус успешно изменен', 'success');
+
+                // Обновляем интерфейс в реальном времени
+                const applicationItem = document.querySelector(`.application-item[data-application-id="${applicationId}"]`);
+                if (applicationItem) {
+                    if (newStatus === 'ACCEPTED' || newStatus === 'REJECTED') {
+                        applicationItem.remove(); // Удаляем заявку из списка
+                    } else {
+                        // Обновляем текст статуса
+                        const statusElement = applicationItem.querySelector('p:nth-child(2)');
+                        if (statusElement) {
+                            statusElement.textContent = `Статус: ${translateApplicationStatus(newStatus)}`;
+                        }
+                    }
+                }
+            } else {
+                showNotification('Ошибка: ' + data.message, 'error');
+            }
+        } catch (error) {
+            console.error('Ошибка при обновлении статуса:', error);
+            showNotification('Произошла ошибка. Попробуйте позже.', 'error');
+        }
+    }
     // Загружаем факультеты при загрузке страницы
     loadFaculties();
 
@@ -738,6 +972,10 @@ function translateApplicationStatus(status) {
             return 'Закрыта';
         case 'UNDER CONSIDERATION':
             return 'На рассмотрении';
+        case 'SENT TO EXAMS':
+            return 'Направлен на экзамены';
+        case 'ENROLLED':
+            return 'Зачислен';
         default:
             return status; // Если статус неизвестен, возвращаем оригинальное значение
     }

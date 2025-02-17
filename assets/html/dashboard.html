@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой кабинет</title>
+    <link rel="stylesheet" href="/PK/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/PK/assets/css/notifications.css"> <!-- Подключение стилей -->
+    <script src="/PK/assets/js/auto_logout.js"></script>
+    <script src="/PK/assets/js/notifications.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Мой кабинет</h1>
+        <a href="/PK/assets/html/index.html" class="home-button">На главную</a> <!-- Кнопка "На главную" -->
+        <div id="user-info">
+            <p>Загрузка данных...</p>
+        </div>
+        <a href="/PK/logout.php" class="logout-button">Выйти</a>
+    </div>
+    <!-- Модальное окно для добавления паспорта -->
+    <div id="passport-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Добавить паспорт</h2>
+            <form id="passport-form">
+                <label for="passport-fullname">ФИО:</label>
+                <input type="text" id="passport-fullname" name="fullname" required />
+                <label for="passport-issue-date">Дата выдачи:</label>
+                <input type="date" id="passport-issue-date" name="issue_date" required />
+                <label for="passport-series-number">Серия и номер:</label>
+                <input type="text" id="passport-series-number" name="series_number" required />
+                <button type="submit">Сохранить</button>
+                <button type="button" class="close-modal">Закрыть</button>
+            </form>
+        </div>
+    </div>
+    <!-- Модальное окно для добавления аттестата -->
+    <div id="certificate-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Добавить аттестат</h2>
+            <form id="certificate-form">
+                <label for="certificate-number">Номер:</label>
+                <input type="text" id="certificate-number" name="number" required />
+                <label for="certificate-issue-date">Дата выдачи:</label>
+                <input type="date" id="certificate-issue-date" name="issue_date" required />
+                <label for="certificate-school-grade">Средняя оценка по школьным предметам:</label>
+                <input type="number" step="0.01" id="certificate-school-grade" name="school_grade" required />
+                <label for="certificate-exam-grade">Средняя оценка по экзаменационным предметам:</label>
+                <input type="number" step="0.01" id="certificate-exam-grade" name="exam_grade" required />
+                <button type="submit">Сохранить</button>
+                <button type="button" class="close-modal">Закрыть</button>
+            </form>
+        </div>
+    </div>
+    <!-- Модальное окно для добавления льготы -->
+    <div id="benefit-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Добавить льготу</h2>
+            <form id="benefit-form">
+                <label for="benefit-name">Название льготы:</label>
+                <input type="text" id="benefit-name" name="name_benefit" required />
+                <label for="benefit-number">Номер льготы:</label>
+                <input type="text" id="benefit-number" name="number_benefit" required />
+                <button type="submit">Сохранить</button>
+                <button type="button" class="close-modal">Закрыть</button>
+            </form>
+        </div>
+    </div>
+    <script src="/PK/assets/js/dashboard.js"></script> <!-- Подключение скрипта -->
+</body>
+</html>

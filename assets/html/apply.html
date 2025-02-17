@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Подача заявки на поступление в университет. Заполните форму и отправьте свои данные.">
+    <title>Подача заявки - Приёмная комиссия университета</title>
+    <link rel="stylesheet" href="/PK/assets/css/apply.css">
+    <link rel="stylesheet" href="/PK/assets/css/auth.css">
+    <link rel="stylesheet" href="/PK/assets/css/notifications.css">
+    <link rel="stylesheet" href="/PK/assets/css/apply-buttons.css">
+    <script src="/PK/assets/js/auth.js" defer></script>
+    <script src="/PK/assets/js/auto_logout.js"></script>
+    <script src="/PK/assets/js/notifications.js"></script>
+    <script src="/PK/assets/js/apply.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Приёмная комиссия университета</h1>
+            <nav>
+                <ul>
+                    <li><a href="/PK/assets/html/index.html">Главная</a></li>
+                    <li><a href="/PK/assets/html/programs.html">Программы</a></li>
+                    <li><a href="/PK/assets/html/apply.html" class="active">Подача заявки</a></li>
+                    <li><a href="/PK/assets/html/contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div id="auth-buttons" class="auth-buttons">
+                <a class="btn-login" id="loginBtn">Войти</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="apply">
+            <div class="container">
+                <h2 id="page-title">Подача заявки на поступление</h2>
+                <p class="apply-summary" id="page-description">Загрузка данных...</p>
+                <div id="action-buttons" class="form-group"></div>
+            </div>
+        </section>
+
+        <!-- Модальное окно для подачи заявки на вступительные экзамены -->
+        <div id="exam-application-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Подать заявку на вступительные экзамены</h2>
+                <!-- Форма для подачи заявки на вступительные экзамены -->
+                <form id="exam-application-form">
+                    <label for="exam-total-score">Общий балл ЕГЭ:</label>
+                    <input type="number" id="exam-total-score" name="total_score" required />
+
+                    <div class="faculty-field">
+                        <span>Факультет:</span>
+                        <select id="exam-faculty" name="faculty_id" required>
+                            <!-- Опции будут загружаться динамически через JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="payment_type" value="paid" required />
+                            Платное обучение
+                        </label>
+                        <label>
+                            <input type="radio" name="payment_type" value="budget" required />
+                            Обучение по бюджету
+                        </label>
+                    </div>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="exam_type" value="with_tests" required />
+                            С вступительными испытаниями
+                        </label>
+                        <label>
+                            <input type="radio" name="exam_type" value="without_tests" required />
+                            БВИ
+                        </label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="submit" class="submit-app">Добавить</button>
+                        <button type="button" class="close-modal">Закрыть</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Модальное окно для подачи заявки на зачисление -->
+        <div id="enrollment-application-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Подать заявку на зачисление</h2>
+                <div id="accepted-applications-container">
+                    <!-- Здесь будет отображаться список принятых заявок -->
+                </div>
+                <p id="no-accepted-applications" style="display: none;">Нет принятых заявок на вступительные экзамены.</p>
+                <button type="submit" id="submit-enrollment" class="submit-app" disabled>Добавить</button>
+                <button type="button" class="close-modal">Закрыть</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Университет. Все права защищены.</p>
+            <nav>
+                <ul>
+                    <li><a href="/PK/assets/html/privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="/PK/assets/html/terms.html">Условия использования</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Список образовательных программ университета. Узнайте о доступных направлениях обучения.">
+    <title>Программы - Приёмная комиссия университета</title>
+    <link rel="stylesheet" href="/PK/assets/css/programs.css">
+    <link rel="stylesheet" href="/PK/assets/css/auth.css">
+    <link rel="stylesheet" href="/PK/assets/css/notifications.css">
+    <script src="/PK/assets/js/auth.js" defer></script>
+    <script src="/PK/assets/js/fetch-programs.js" defer></script>
+    <script src="/PK/assets/js/auto_logout.js"></script>
+    <script src="/PK/assets/js/notifications.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Приёмная комиссия университета</h1>
+            <nav>
+                <ul>
+                    <li><a href="/PK/assets/html/index.html">Главная</a></li>
+                    <li><a href="/PK/assets/html/programs.html" class="active">Программы</a></li>
+                    <li><a href="/PK/assets/html/apply.html">Подача заявки</a></li>
+                    <li><a href="/PK/assets/html/contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div id="auth-buttons" class="auth-buttons">
+                <a class="btn-login" id="loginBtn">Войти</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="program-list"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Университет. Все права защищены.</p>
+            <nav>
+                <ul>
+                    <li><a href="/PK/assets/html/privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="/PK/assets/html/terms.html">Условия использования</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Функция для проверки авторизации
+            function checkAuth() {
+                fetch('/PK/check_auth.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const authButtons = document.getElementById('auth-buttons');
+                        if (data.is_authenticated) {
+                            // Если пользователь авторизован, показываем кнопку "Мой кабинет"
+                            authButtons.innerHTML = `
+                                <a class="btn-login" href="/PK/assets/html/dashboard.html">Мой кабинет</a>
+                            `;
+                        } else {
+                            // Если пользователь не авторизован, показываем кнопку "Войти"
+                            authButtons.innerHTML = `
+                                <a class="btn-login" id="loginBtn">Войти</a>
+                            `;
+                        }
+                    })
+                    .catch(error => console.error('Ошибка при проверке авторизации:', error));
+            }
+        
+            // Проверяем авторизацию при загрузке страницы
+            checkAuth();
+        });
+        </script>
+</body>
+</html>

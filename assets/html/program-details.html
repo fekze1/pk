@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Подробная информация о выбранной образовательной программе. Узнайте больше о курсе, требованиях и преимуществах.">
+    <title>Детали программы - Приёмная комиссия университета</title>
+    <link rel="stylesheet" href="/PK/assets/css/program-details.css">
+    <link rel="stylesheet" href="/PK/assets/css/auth.css">
+    <link rel="stylesheet" href="/PK/assets/css/notifications.css">
+    <script src="/PK/assets/js/auth.js" defer></script>
+    <script src="/PK/assets/js/auto_logout.js"></script>
+    <script src="/PK/assets/js/notifications.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Приёмная комиссия университета</h1>
+            <nav>
+                <ul>
+                    <li><a href="/PK/assets/html/index.html">Главная</a></li>
+                    <li><a href="/PK/assets/html/programs.html">Программы</a></li>
+                    <li><a href="/PK/assets/html/apply.html">Подача заявки</a></li>
+                    <li><a href="/PK/assets/html/contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div id="auth-buttons" class="auth-buttons">
+                <a class="btn-login" id="loginBtn">Войти</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="program-details">
+            <div class="container">
+                <h2>Название программы</h2>
+                <p class="program-summary">Краткое описание программы с акцентом на её преимущества и уникальность.</p>
+
+                <div class="program-info">
+                    <h3>Описание программы</h3>
+                    <p>
+                        Здесь размещается полная информация о программе: содержание курса, список дисциплин, методики обучения и практики.
+                    </p>
+
+                    <h3>Требования для поступления</h3>
+                    <ul>
+                        <li>Средний балл аттестата или диплома.</li>
+                        <li>Сертификат ЕГЭ или другого экзамена.</li>
+                        <li>Мотивационное письмо (при необходимости).</li>
+                    </ul>
+
+                    <h3>Преимущества обучения</h3>
+                    <ul>
+                        <li>Современные методики обучения.</li>
+                        <li>Профессиональный преподавательский состав.</li>
+                        <li>Стажировки в ведущих компаниях отрасли.</li>
+                    </ul>
+
+                    <h3>Продолжительность и форма обучения</h3>
+                    <p>
+                        Продолжительность: 4 года (бакалавриат) или 2 года (магистратура).  
+                        Форма обучения: очная, заочная, дистанционная.
+                    </p>
+
+                    <h3>Контакты для уточнения информации</h3>
+                    <p>
+                        Для получения более подробной информации свяжитесь с нашим отделом приёмной комиссии:
+                        <br>Телефон: +7 (000) 000-0000  
+                        Email: testuniversity@university.com
+                    </p>
+
+                    <a href="apply.html" class="btn">Подать заявку</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Университет. Все права защищены.</p>
+            <nav>
+                <ul>
+                    <li><a href="/PK/assets/html/privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="/PK/assets/html/terms.html">Условия использования</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Функция для проверки авторизации
+            function checkAuth() {
+                fetch('/PK/check_auth.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const authButtons = document.getElementById('auth-buttons');
+                        if (data.is_authenticated) {
+                            // Если пользователь авторизован, показываем кнопку "Мой кабинет"
+                            authButtons.innerHTML = `
+                                <a class="btn-login" href="/PK/assets/html/dashboard.html">Мой кабинет</a>
+                            `;
+                        } else {
+                            // Если пользователь не авторизован, показываем кнопку "Войти"
+                            authButtons.innerHTML = `
+                                <a class="btn-login" id="loginBtn">Войти</a>
+                            `;
+                        }
+                    })
+                    .catch(error => console.error('Ошибка при проверке авторизации:', error));
+            }
+        
+            // Проверяем авторизацию при загрузке страницы
+            checkAuth();
+        });
+        </script>
+</body>
+</html>

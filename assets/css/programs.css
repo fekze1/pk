@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50; 
+    background-color: #f7faff; 
+    font-size: 16px; /* Базовый размер шрифта */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    min-width: 300px; /* Минимальная ширина контейнера */
+    margin: 0 auto;
+}
+
+header {
+    background-color: #1a73e8; 
+    color: #fff;
+    padding: 1.25rem 0; /* Относительные единицы вместо пикселей */
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.8rem; /* Адаптивный размер шрифта */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.625rem; /* Относительные единицы */
+    gap: 0.625rem; /* Замена margin на gap для гибкости */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.3125rem 0.625rem; /* Относительные единицы */
+    border-radius: 0.3125rem; /* Относительные единицы */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #155ab0;
+}
+
+.programs {
+    padding: 2.5rem 1.25rem; /* Относительные единицы */
+    background-color: #fff;
+    text-align: center;
+}
+
+.programs h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Адаптивный размер шрифта */
+    margin-bottom: 1.25rem;
+    color: #1a73e8; 
+}
+
+.programs p {
+    font-size: clamp(0.875rem, 3vw, 1rem); /* Адаптивный размер шрифта */
+    margin-bottom: 2.5rem;
+    color: #555;
+}
+
+.program-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* Относительные единицы */
+}
+
+.program-item {
+    flex: 1 1 calc(33.333% - 1.25rem); /* Адаптивная ширина */
+    background-color: #e3f2fd; 
+    padding: 1.25rem;
+    border-radius: 0.5rem; /* Относительные единицы */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .program-item {
+        flex: 1 1 calc(50% - 1.25rem); /* Для средних экранов */
+    }
+}
+
+@media (max-width: 480px) {
+    .program-item {
+        flex: 1 1 100%; /* Для маленьких экранов */
+    }
+}
+
+.program-item:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+.program-item h3 {
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Адаптивный размер шрифта */
+    color: #155ab0; 
+    margin-bottom: 0.625rem;
+}
+
+.program-item p {
+    font-size: clamp(0.875rem, 2vw, 0.9rem); /* Адаптивный размер шрифта */
+    color: #555;
+    margin-bottom: 1.25rem;
+}
+
+.program-item .btn {
+    display: inline-block;
+    padding: 0.625rem 1.25rem; /* Относительные единицы */
+    font-size: clamp(0.875rem, 2vw, 1rem); /* Адаптивный размер шрифта */
+    color: #fff;
+    background-color: #1a73e8; 
+    text-decoration: none;
+    border-radius: 0.3125rem; /* Относительные единицы */
+    transition: background-color 0.3s ease;
+}
+
+.program-item .btn:hover {
+    background-color: #155ab0;
+}
+
+footer {
+    background-color: #1a73e8;
+    color: #fff;
+    text-align: center;
+    padding: 1.25rem 0; /* Относительные единицы */
+}
+
+footer p {
+    margin: 0;
+    font-size: clamp(0.875rem, 2vw, 0.9rem); /* Адаптивный размер шрифта */
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.625rem 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem; /* Относительные единицы */
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(0.875rem, 2vw, 0.9rem); /* Адаптивный размер шрифта */
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: #dbe9fd; 
+}

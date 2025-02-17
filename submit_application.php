@@ -22,8 +22,8 @@ if (!$type_application || !$faculty_id || !$total_score) {
 require_once 'includes/db.php';
 
 try {
-    $stmt = $pdo->prepare("INSERT INTO Application (type_application, applicant_id, faculty_id, status_application) VALUES (?, ?, ?, 'ACTIVE')");
-    if ($stmt->execute([$type_application, $applicant_id, $faculty_id])) {
+    $stmt = $pdo->prepare("INSERT INTO Application (type_application, applicant_id, faculty_id, total_score, status_application) VALUES (?, ?, ?, ?, 'ACTIVE')");
+    if ($stmt->execute([$type_application, $applicant_id, $faculty_id, $total_score])) {
         echo json_encode(['success' => true]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Ошибка при добавлении заявки']);

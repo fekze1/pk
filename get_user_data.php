@@ -14,7 +14,7 @@ require_once 'includes/db.php'; // Подключение к базе данны
 
 try {
     if ($role === 'applicant') {
-        // Запрос для абитуриента
+        // Запрос для абитуриента (не трогаем)
         $stmt = $pdo->prepare("
             SELECT 
                 a.fullname AS fullname, 
@@ -70,10 +70,21 @@ try {
         $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user_data) {
+            // Запрос для получения факультетов, на которых работает сотрудник
+            $faculty_stmt = $pdo->prepare("
+                SELECT f.name_faculty 
+                FROM Faculty_Employee fe
+                JOIN Faculty f ON fe.faculty_id = f.faculty_id
+                WHERE fe.employee_id = ?
+            ");
+            $faculty_stmt->execute([$user_id]);
+            $faculties = $faculty_stmt->fetchAll(PDO::FETCH_COLUMN); // Получаем только названия факультетов
+
             echo json_encode([
                 'success' => true,
                 'fullname' => $user_data['fullname'],
                 'email' => $user_data['email'],
+                'faculties' => $faculties, // Добавляем список факультетов
                 'role' => $role
             ]);
         } else {

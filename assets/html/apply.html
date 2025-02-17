@@ -39,7 +39,16 @@
                 <div id="action-buttons" class="form-group"></div>
             </div>
         </section>
-
+        <!-- Модальное окно для просмотра активных заявок -->
+        <div id="active-applications-modal" class="modal hidden">
+            <div class="modal-content larger-modal">
+                <h2>Активные заявки</h2>
+                <div id="active-applications-container" class="scrollable-container">
+                    <!-- Здесь будут отображаться активные заявки -->
+                </div>
+                <button type="button" class="close-modal">Закрыть</button>
+            </div>
+        </div>
         <!-- Модальное окно для подачи заявки на вступительные экзамены -->
         <div id="exam-application-modal" class="modal hidden">
             <div class="modal-content">
@@ -95,6 +104,16 @@
                 </div>
                 <p id="no-accepted-applications" style="display: none;">Нет принятых заявок на вступительные экзамены.</p>
                 <button type="submit" id="submit-enrollment" class="submit-app" disabled>Добавить</button>
+                <button type="button" class="close-modal">Закрыть</button>
+            </div>
+        </div>
+        <!-- Модальное окно для просмотра всех заявок -->
+        <div id="my-applications-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Мои заявки</h2>
+                <div id="applications-container" class="scrollable-container">
+                    <!-- Здесь будут отображаться заявки -->
+                </div>
                 <button type="button" class="close-modal">Закрыть</button>
             </div>
         </div>

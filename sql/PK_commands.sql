@@ -13,3 +13,31 @@ VALUES
     ('Факультет прикладной математики', 4.60, 3.90, 255, 215),
     ('Факультет дизайна и искусства', 4.05, 3.45, 232, 192),
     ('Факультет экологии и природопользования', 4.25, 3.65, 242, 202);
+
+--Employee
+INSERT INTO Employee (fullname, email, login_employee, password_employee) VALUES
+('Иван Иванов', 'ivan.ivanov@example.com', 'ivan_ivanov', 'password'),
+('Петр Петров', 'petr.petrov@example.com', 'petr_petrov', 'password'),
+('Сидор Сидоров', 'sidor.sidorov@example.com', 'sidor_sidorov', 'password'),
+('Алексей Алексеев', 'alexey.alexeev@example.com', 'alexey_alexeev', 'password'),
+('Михаил Михайлов', 'mikhail.mikhailov@example.com', 'mikhail_mikhailov', 'password'),
+('Андрей Андреев', 'andrey.andreev@example.com', 'andrey_andreev', 'password'),
+('Дмитрий Дмитриев', 'dmitry.dmitriev@example.com', 'dmitry_dmitriev', 'password'),
+('Владимир Владимиров', 'vladimir.vladimirov@example.com', 'vladimir_vladimirov', 'password'),
+('Николай Николаев', 'nikolay.nikolaev@example.com', 'nikolay_nikolaev', 'password'),
+('Александр Александров', 'alexander.alexandrov@example.com', 'alexander_alexandrov', 'password');
+
+--Faculty_Employee
+INSERT INTO Faculty_Employee (faculty_id, employee_id) VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 3),
+(5, 3),
+(6, 4),
+(7, 5),
+(8, 6),
+(9, 7),
+(10, 8),
+(1, 9),
+(2, 10);

@@ -147,6 +147,20 @@ function loadUserData() {
                         html += `<p>Льготы не добавлены</p>`;
                     }
                     html += `<button id="add-benefit" style="display: block; margin-top: 10px;">Добавить льготу</button>`;
+                } else if (data.role === 'employee') {
+                    // Добавляем информацию о факультетах
+                    if (data.faculties && data.faculties.length > 0) {
+                        html += `<p><strong>Факультеты:</strong></p>`;
+                        html += `<ul>`;
+                        data.faculties.forEach(faculty => {
+                            html += `<li>${faculty}</li>`;
+                        });
+                        html += `</ul>`;
+                    } else {
+                        html += `<p>Вы не привязаны ни к одному факультету.</p>`;
+                    }
+                } else {
+                    userInfo.innerHTML = `<p>${data.message}</p>`;
                 }
                 userInfo.innerHTML = html;
 

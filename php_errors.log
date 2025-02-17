@@ -1,669 +1,250 @@
-[13-Feb-2025 06:08:47 Europe/Berlin] [2025-02-13 06:08:47] Запрос к register.php: POST /PK/register.php
-[13-Feb-2025 06:08:47 Europe/Berlin] [2025-02-13 06:08:47] Тело запроса:
-{"login":"test0","password":"123123","email":"1fekze@mail.ru","fullname":"1"}
-[13-Feb-2025 06:08:47 Europe/Berlin] [2025-02-13 06:08:47] Таблица applicant заблокирована для записи
-[13-Feb-2025 06:08:47 Europe/Berlin] [2025-02-13 06:08:47] Таблица applicant разблокирована
-[13-Feb-2025 06:08:47 Europe/Berlin] [2025-02-13 06:08:47] Ответ от register.php:
-{"success":true}
-
-[13-Feb-2025 06:09:02 Europe/Berlin] [2025-02-13 06:09:02] Запрос к register.php: POST /PK/register.php
-[13-Feb-2025 06:09:02 Europe/Berlin] [2025-02-13 06:09:02] Тело запроса:
-{"login":"test00","password":"123123","email":"11fekze@mail.ru","fullname":"1"}
-[13-Feb-2025 06:09:02 Europe/Berlin] [2025-02-13 06:09:02] Таблица applicant заблокирована для записи
-[13-Feb-2025 06:09:02 Europe/Berlin] [2025-02-13 06:09:02] Таблица applicant разблокирована
-[13-Feb-2025 06:09:02 Europe/Berlin] [2025-02-13 06:09:02] Ответ от register.php:
-{"success":true}
-
-[13-Feb-2025 06:09:40 Europe/Berlin] [2025-02-13 06:09:40] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 06:09:40 Europe/Berlin] [2025-02-13 06:09:40] Тело запроса:
-{"login":"test0","password":"123123","role":"applicant"}
-[13-Feb-2025 06:09:40 Europe/Berlin] [2025-02-13 06:09:40] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 06:09:48 Europe/Berlin] [2025-02-13 06:09:48] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 06:09:48 Europe/Berlin] [2025-02-13 06:09:48] Тело запроса:
-{"login":"test00","password":"123123","role":"applicant"}
-[13-Feb-2025 06:09:48 Europe/Berlin] [2025-02-13 06:09:48] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 06:10:19 Europe/Berlin] [2025-02-13 06:10:19] Таблицы Passport и Applicant заблокированы для записи
-[13-Feb-2025 06:10:19 Europe/Berlin] [2025-02-13 06:10:19] Таблицы Passport и Applicant разблокированы
-[13-Feb-2025 06:10:22 Europe/Berlin] [2025-02-13 06:10:22] Таблицы Passport и Applicant заблокированы для записи
-[13-Feb-2025 06:10:22 Europe/Berlin] [2025-02-13 06:10:22] Ошибка в add_passport.php: Паспорт с серия/номером '111' уже существует
-[13-Feb-2025 06:10:22 Europe/Berlin] [2025-02-13 06:10:22] Таблицы разблокированы после ошибки
-[13-Feb-2025 06:11:05 Europe/Berlin] [2025-02-13 06:11:05] Таблицы Certificate и Applicant заблокированы для записи
-[13-Feb-2025 06:11:05 Europe/Berlin] [2025-02-13 06:11:05] Добавлена задержка 10 секунд для демонстрации блокировки
-[13-Feb-2025 06:11:15 Europe/Berlin] [2025-02-13 06:11:15] Таблицы Certificate и Applicant заблокированы для записи
-[13-Feb-2025 06:11:15 Europe/Berlin] [2025-02-13 06:11:15] Таблицы Certificate и Applicant разблокированы
-[13-Feb-2025 06:11:15 Europe/Berlin] [2025-02-13 06:11:15] Ошибка в add_certificate.php: Аттестат с номером '1' уже существует
-[13-Feb-2025 06:11:15 Europe/Berlin] [2025-02-13 06:11:15] Таблицы разблокированы после ошибки
-[13-Feb-2025 11:40:17 Europe/Berlin] [2025-02-13 11:40:17] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 11:40:17 Europe/Berlin] [2025-02-13 11:40:17] Тело запроса:
+[17-Feb-2025 03:42:25 Europe/Berlin] [2025-02-17 03:42:25] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 03:42:25 Europe/Berlin] [2025-02-17 03:42:25] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 11:40:17 Europe/Berlin] [2025-02-13 11:40:17] Ответ от auth.php:
+[17-Feb-2025 03:42:25 Europe/Berlin] [2025-02-17 03:42:25] Ответ от auth.php:
 {"success":true}
 
-[13-Feb-2025 12:07:33 Europe/Berlin] [2025-02-13 12:07:33] Запрос к register.php: POST /PK/register.php
-[13-Feb-2025 12:07:33 Europe/Berlin] [2025-02-13 12:07:33] Тело запроса:
-{"login":"test1","password":"123123","email":"fekze@mail.ru111","fullname":"1"}
-[13-Feb-2025 12:07:33 Europe/Berlin] [2025-02-13 12:07:33] Таблица applicant заблокирована для записи
-[13-Feb-2025 12:07:33 Europe/Berlin] [2025-02-13 12:07:33] Ошибка в register.php: Логин уже используется
-[13-Feb-2025 12:07:33 Europe/Berlin] [2025-02-13 12:07:33] Таблица applicant разблокирована после ошибки
-[13-Feb-2025 12:07:37 Europe/Berlin] [2025-02-13 12:07:37] Запрос к register.php: POST /PK/register.php
-[13-Feb-2025 12:07:37 Europe/Berlin] [2025-02-13 12:07:37] Тело запроса:
-{"login":"test2","password":"123123","email":"fekze@mail.ru111","fullname":"1"}
-[13-Feb-2025 12:07:37 Europe/Berlin] [2025-02-13 12:07:37] Таблица applicant заблокирована для записи
-[13-Feb-2025 12:07:37 Europe/Berlin] [2025-02-13 12:07:37] Таблица applicant разблокирована
-[13-Feb-2025 12:07:37 Europe/Berlin] [2025-02-13 12:07:37] Ответ от register.php:
-{"success":true}
-
-[13-Feb-2025 12:08:36 Europe/Berlin] [2025-02-13 12:08:36] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 12:08:36 Europe/Berlin] [2025-02-13 12:08:36] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[13-Feb-2025 12:08:36 Europe/Berlin] [2025-02-13 12:08:36] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 12:08:47 Europe/Berlin] [2025-02-13 12:08:47] Таблицы Passport и Applicant заблокированы для записи
-[13-Feb-2025 12:08:47 Europe/Berlin] [2025-02-13 12:08:47] Таблицы Passport и Applicant разблокированы
-[13-Feb-2025 12:16:08 Europe/Berlin] [2025-02-13 12:16:08] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 12:16:08 Europe/Berlin] [2025-02-13 12:16:08] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[13-Feb-2025 12:16:08 Europe/Berlin] [2025-02-13 12:16:08] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 12:20:26 Europe/Berlin] [2025-02-13 12:20:26] Таблица Certificate заблокирована для записи
-[13-Feb-2025 12:20:26 Europe/Berlin] [2025-02-13 12:20:26] Таблица Certificate разблокирована
-[13-Feb-2025 12:21:13 Europe/Berlin] [2025-02-13 12:21:13] Таблица Certificate заблокирована для записи
-[13-Feb-2025 12:21:13 Europe/Berlin] [2025-02-13 12:21:13] Таблица Certificate разблокирована
-[13-Feb-2025 12:21:49 Europe/Berlin] [2025-02-13 12:21:49] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 12:21:49 Europe/Berlin] [2025-02-13 12:21:49] Тело запроса:
-{"login":"test0","password":"123123","role":"applicant"}
-[13-Feb-2025 12:21:49 Europe/Berlin] [2025-02-13 12:21:49] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 12:22:05 Europe/Berlin] [2025-02-13 12:22:05] Таблица Certificate заблокирована для записи
-[13-Feb-2025 12:22:05 Europe/Berlin] [2025-02-13 12:22:05] Ошибка в add_certificate.php: Аттестат с номером '123123' уже существует
-[13-Feb-2025 12:22:05 Europe/Berlin] [2025-02-13 12:22:05] Таблица Certificate разблокирована после ошибки
-[13-Feb-2025 12:22:08 Europe/Berlin] [2025-02-13 12:22:08] Таблица Certificate заблокирована для записи
-[13-Feb-2025 12:22:08 Europe/Berlin] [2025-02-13 12:22:08] Таблица Certificate разблокирована
-[13-Feb-2025 13:06:19 Europe/Berlin] [2025-02-13 13:06:19] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:06:19 Europe/Berlin] [2025-02-13 13:06:19] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:06:20 Europe/Berlin] [2025-02-13 13:06:20] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:06:41 Europe/Berlin] [2025-02-13 13:06:41] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:06:41 Europe/Berlin] [2025-02-13 13:06:41] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[13-Feb-2025 13:06:42 Europe/Berlin] [2025-02-13 13:06:42] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:06:57 Europe/Berlin] [2025-02-13 13:06:57] Таблица Certificate заблокирована для записи
-[13-Feb-2025 13:06:57 Europe/Berlin] [2025-02-13 13:06:57] Таблица Certificate разблокирована
-[13-Feb-2025 13:07:05 Europe/Berlin] [2025-02-13 13:07:05] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:07:05 Europe/Berlin] [2025-02-13 13:07:05] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[13-Feb-2025 13:07:05 Europe/Berlin] [2025-02-13 13:07:05] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:33:23 Europe/Berlin] [2025-02-13 13:33:23] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:33:23 Europe/Berlin] [2025-02-13 13:33:23] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:33:23 Europe/Berlin] [2025-02-13 13:33:23] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:34:11 Europe/Berlin] [2025-02-13 13:34:11] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:34:11 Europe/Berlin] [2025-02-13 13:34:11] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:34:11 Europe/Berlin] [2025-02-13 13:34:11] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:35:02 Europe/Berlin] [2025-02-13 13:35:02] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:35:02 Europe/Berlin] [2025-02-13 13:35:02] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:35:02 Europe/Berlin] [2025-02-13 13:35:02] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:35:16 Europe/Berlin] [2025-02-13 13:35:16] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:35:16 Europe/Berlin] [2025-02-13 13:35:16] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:35:16 Europe/Berlin] [2025-02-13 13:35:16] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:36:10 Europe/Berlin] [2025-02-13 13:36:10] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:36:10 Europe/Berlin] [2025-02-13 13:36:10] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:36:10 Europe/Berlin] [2025-02-13 13:36:10] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:37:02 Europe/Berlin] [2025-02-13 13:37:02] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:37:02 Europe/Berlin] [2025-02-13 13:37:02] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:37:02 Europe/Berlin] [2025-02-13 13:37:02] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:37:20 Europe/Berlin] [2025-02-13 13:37:20] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:37:20 Europe/Berlin] [2025-02-13 13:37:20] Тело запроса:
-{"login":"admin1","password":"password1","role":"applicant"}
-[13-Feb-2025 13:37:20 Europe/Berlin] [2025-02-13 13:37:20] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
-
-[13-Feb-2025 13:37:32 Europe/Berlin] [2025-02-13 13:37:32] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:37:32 Europe/Berlin] [2025-02-13 13:37:32] Тело запроса:
-{"login":"admin1","password":"password123","role":"applicant"}
-[13-Feb-2025 13:37:32 Europe/Berlin] [2025-02-13 13:37:32] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
-
-[13-Feb-2025 13:37:49 Europe/Berlin] [2025-02-13 13:37:49] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:37:49 Europe/Berlin] [2025-02-13 13:37:49] Тело запроса:
-{"login":"admin1","password":"password123","role":"employee"}
-[13-Feb-2025 13:37:49 Europe/Berlin] [2025-02-13 13:37:49] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:44:04 Europe/Berlin] [2025-02-13 13:44:04] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:44:04 Europe/Berlin] [2025-02-13 13:44:04] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:44:04 Europe/Berlin] [2025-02-13 13:44:04] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:44:34 Europe/Berlin] [2025-02-13 13:44:34] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:44:34 Europe/Berlin] [2025-02-13 13:44:34] Тело запроса:
-{"login":"admin1","password":"password123","role":"employee"}
-[13-Feb-2025 13:44:34 Europe/Berlin] [2025-02-13 13:44:34] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:47:43 Europe/Berlin] [2025-02-13 13:47:43] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:47:43 Europe/Berlin] [2025-02-13 13:47:43] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:47:43 Europe/Berlin] [2025-02-13 13:47:43] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:48:32 Europe/Berlin] [2025-02-13 13:48:32] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:48:32 Europe/Berlin] [2025-02-13 13:48:32] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:48:32 Europe/Berlin] [2025-02-13 13:48:32] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:48:53 Europe/Berlin] [2025-02-13 13:48:53] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:48:53 Europe/Berlin] [2025-02-13 13:48:53] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:48:54 Europe/Berlin] [2025-02-13 13:48:54] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:49:10 Europe/Berlin] [2025-02-13 13:49:10] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:49:10 Europe/Berlin] [2025-02-13 13:49:10] Тело запроса:
-{"login":"admin1","password":"password123","role":"employee"}
-[13-Feb-2025 13:49:10 Europe/Berlin] [2025-02-13 13:49:10] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:52:39 Europe/Berlin] [2025-02-13 13:52:39] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:52:39 Europe/Berlin] [2025-02-13 13:52:39] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:52:39 Europe/Berlin] [2025-02-13 13:52:39] Ответ от auth.php:
-{"success":true}
-
-[13-Feb-2025 13:52:49 Europe/Berlin] [2025-02-13 13:52:49] Запрос к auth.php: POST /PK/auth.php
-[13-Feb-2025 13:52:49 Europe/Berlin] [2025-02-13 13:52:49] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[13-Feb-2025 13:52:49 Europe/Berlin] [2025-02-13 13:52:49] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 21:57:04 Europe/Berlin] [2025-02-16 21:57:04] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 21:57:04 Europe/Berlin] [2025-02-16 21:57:04] Тело запроса:
-{"login":"test","password":"123123","email":"fekze@mail.ru","fullname":"Pimkin Roman Pavlovich"}
-[16-Feb-2025 21:57:04 Europe/Berlin] [2025-02-16 21:57:04] Таблица applicant заблокирована для записи
-[16-Feb-2025 21:57:04 Europe/Berlin] [2025-02-16 21:57:04] Таблица applicant разблокирована
-[16-Feb-2025 21:57:04 Europe/Berlin] [2025-02-16 21:57:04] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 21:57:10 Europe/Berlin] [2025-02-16 21:57:10] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 21:57:10 Europe/Berlin] [2025-02-16 21:57:10] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 21:57:10 Europe/Berlin] [2025-02-16 21:57:10] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:03:54 Europe/Berlin] [2025-02-16 22:03:54] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 22:03:54 Europe/Berlin] [2025-02-16 22:03:54] Тело запроса:
-{"login":"test","password":"123123","email":"fekze@mail.ru","fullname":"Пимкин Роман Павлович"}
-[16-Feb-2025 22:03:54 Europe/Berlin] [2025-02-16 22:03:54] Таблица applicant заблокирована для записи
-[16-Feb-2025 22:03:54 Europe/Berlin] [2025-02-16 22:03:54] Таблица applicant разблокирована
-[16-Feb-2025 22:03:54 Europe/Berlin] [2025-02-16 22:03:54] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 22:04:01 Europe/Berlin] [2025-02-16 22:04:01] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:04:01 Europe/Berlin] [2025-02-16 22:04:01] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:04:01 Europe/Berlin] [2025-02-16 22:04:01] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:14:34 Europe/Berlin] [2025-02-16 22:14:34] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:14:34 Europe/Berlin] [2025-02-16 22:14:34] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:14:34 Europe/Berlin] [2025-02-16 22:14:34] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:19:19 Europe/Berlin] [2025-02-16 22:19:19] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:19:20 Europe/Berlin] [2025-02-16 22:19:20] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:19:20 Europe/Berlin] [2025-02-16 22:19:20] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:24:51 Europe/Berlin] [2025-02-16 22:24:51] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:24:51 Europe/Berlin] [2025-02-16 22:24:51] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:24:51 Europe/Berlin] [2025-02-16 22:24:51] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:26:40 Europe/Berlin] [2025-02-16 22:26:40] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:26:40 Europe/Berlin] [2025-02-16 22:26:40] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:26:40 Europe/Berlin] [2025-02-16 22:26:40] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:28:50 Europe/Berlin] [2025-02-16 22:28:50] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:28:50 Europe/Berlin] [2025-02-16 22:28:50] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:28:50 Europe/Berlin] [2025-02-16 22:28:50] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:29:37 Europe/Berlin] [2025-02-16 22:29:37] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:29:37 Europe/Berlin] [2025-02-16 22:29:37] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:29:37 Europe/Berlin] [2025-02-16 22:29:37] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:37:16 Europe/Berlin] [2025-02-16 22:37:16] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:37:16 Europe/Berlin] [2025-02-16 22:37:16] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:37:16 Europe/Berlin] [2025-02-16 22:37:16] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:38:02 Europe/Berlin] [2025-02-16 22:38:02] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:38:02 Europe/Berlin] [2025-02-16 22:38:02] Таблица Certificate разблокирована
-[16-Feb-2025 22:40:18 Europe/Berlin] [2025-02-16 22:40:18] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:40:18 Europe/Berlin] [2025-02-16 22:40:18] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:40:18 Europe/Berlin] [2025-02-16 22:40:18] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:40:28 Europe/Berlin] [2025-02-16 22:40:28] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:40:28 Europe/Berlin] [2025-02-16 22:40:28] Таблица Certificate разблокирована
-[16-Feb-2025 22:42:20 Europe/Berlin] [2025-02-16 22:42:20] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 22:42:20 Europe/Berlin] [2025-02-16 22:42:20] Ошибка в add_passport.php: Не удалось обновить данные пользователя
-[16-Feb-2025 22:42:20 Europe/Berlin] [2025-02-16 22:42:20] Таблицы разблокированы после ошибки
-[16-Feb-2025 22:42:28 Europe/Berlin] [2025-02-16 22:42:28] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 22:42:28 Europe/Berlin] [2025-02-16 22:42:28] Ошибка в add_passport.php: Паспорт с серия/номером '123231123231' уже существует
-[16-Feb-2025 22:42:28 Europe/Berlin] [2025-02-16 22:42:28] Таблицы разблокированы после ошибки
-[16-Feb-2025 22:42:57 Europe/Berlin] [2025-02-16 22:42:57] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:42:57 Europe/Berlin] [2025-02-16 22:42:57] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:42:57 Europe/Berlin] [2025-02-16 22:42:57] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:43:08 Europe/Berlin] [2025-02-16 22:43:08] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:43:08 Europe/Berlin] [2025-02-16 22:43:08] Таблица Certificate разблокирована
-[16-Feb-2025 22:43:24 Europe/Berlin] [2025-02-16 22:43:24] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 22:43:24 Europe/Berlin] [2025-02-16 22:43:24] Тело запроса:
-{"login":"test1","password":"123123","email":"fekze1@mail.ru","fullname":"1"}
-[16-Feb-2025 22:43:24 Europe/Berlin] [2025-02-16 22:43:24] Таблица applicant заблокирована для записи
-[16-Feb-2025 22:43:24 Europe/Berlin] [2025-02-16 22:43:24] Таблица applicant разблокирована
-[16-Feb-2025 22:43:24 Europe/Berlin] [2025-02-16 22:43:24] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 22:43:30 Europe/Berlin] [2025-02-16 22:43:30] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:43:30 Europe/Berlin] [2025-02-16 22:43:30] Тело запроса:
-{"login":"test1","password":"123123","role":"applicant"}
-[16-Feb-2025 22:43:31 Europe/Berlin] [2025-02-16 22:43:31] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:43:42 Europe/Berlin] [2025-02-16 22:43:42] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 22:43:42 Europe/Berlin] [2025-02-16 22:43:42] Ошибка в add_passport.php: Не удалось обновить данные пользователя
-[16-Feb-2025 22:43:42 Europe/Berlin] [2025-02-16 22:43:42] Таблицы разблокированы после ошибки
-[16-Feb-2025 22:46:42 Europe/Berlin] [2025-02-16 22:46:42] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 22:46:42 Europe/Berlin] [2025-02-16 22:46:42] Тело запроса:
-{"login":"test2","password":"123123","email":"fekze2@mail.ru","fullname":"1"}
-[16-Feb-2025 22:46:42 Europe/Berlin] [2025-02-16 22:46:42] Таблица applicant заблокирована для записи
-[16-Feb-2025 22:46:42 Europe/Berlin] [2025-02-16 22:46:42] Таблица applicant разблокирована
-[16-Feb-2025 22:46:42 Europe/Berlin] [2025-02-16 22:46:42] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 22:46:49 Europe/Berlin] [2025-02-16 22:46:49] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:46:49 Europe/Berlin] [2025-02-16 22:46:49] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[16-Feb-2025 22:46:49 Europe/Berlin] [2025-02-16 22:46:49] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 22:47:04 Europe/Berlin] [2025-02-16 22:47:04] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 22:47:04 Europe/Berlin] [2025-02-16 22:47:04] Ошибка в add_passport.php: Не удалось обновить данные пользователя
-[16-Feb-2025 22:47:04 Europe/Berlin] [2025-02-16 22:47:04] Таблицы разблокированы после ошибки
-[16-Feb-2025 22:50:26 Europe/Berlin] [2025-02-16 22:50:26] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 22:50:26 Europe/Berlin] [2025-02-16 22:50:26] Тело запроса:
-{"login":"test3","password":"123123","email":"fekze3@mail.ru","fullname":"111"}
-[16-Feb-2025 22:50:26 Europe/Berlin] [2025-02-16 22:50:26] Таблица applicant заблокирована для записи
-[16-Feb-2025 22:50:26 Europe/Berlin] [2025-02-16 22:50:26] Таблица applicant разблокирована
-[16-Feb-2025 22:50:26 Europe/Berlin] [2025-02-16 22:50:26] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 22:50:33 Europe/Berlin] [2025-02-16 22:50:33] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:50:33 Europe/Berlin] [2025-02-16 22:50:33] Тело запроса:
+[17-Feb-2025 03:43:09 Europe/Berlin] [2025-02-17 03:43:09] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 03:43:09 Europe/Berlin] [2025-02-17 03:43:09] Тело запроса:
 {"login":"test3","password":"123123","role":"applicant"}
-[16-Feb-2025 22:50:33 Europe/Berlin] [2025-02-16 22:50:33] Ответ от auth.php:
+[17-Feb-2025 03:43:09 Europe/Berlin] [2025-02-17 03:43:09] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 22:50:45 Europe/Berlin] [2025-02-16 22:50:45] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 22:50:45 Europe/Berlin] [2025-02-16 22:50:45] Таблицы Passport и Applicant разблокированы
-[16-Feb-2025 22:51:48 Europe/Berlin] [2025-02-16 22:51:48] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:51:48 Europe/Berlin] [2025-02-16 22:51:48] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:51:48 Europe/Berlin] [2025-02-16 22:51:48] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
+[17-Feb-2025 03:43:28 Europe/Berlin] [2025-02-17 03:43:28] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 03:43:28 Europe/Berlin] [2025-02-17 03:43:28] Тело запроса:
+{"login":"admin1","password":"password123","role":"employee"}
+[17-Feb-2025 03:43:28 Europe/Berlin] [2025-02-17 03:43:28] Ответ от auth.php:
+{"success":true}
 
-[16-Feb-2025 22:52:22 Europe/Berlin] [2025-02-16 22:52:22] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 22:52:22 Europe/Berlin] [2025-02-16 22:52:22] Тело запроса:
+[17-Feb-2025 03:51:35 Europe/Berlin] [2025-02-17 03:51:35] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 03:51:35 Europe/Berlin] [2025-02-17 03:51:35] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 03:51:35 Europe/Berlin] [2025-02-17 03:51:35] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 03:56:18 Europe/Berlin] [2025-02-17 03:56:18] Запрос к register.php: POST /PK/register.php
+[17-Feb-2025 03:56:18 Europe/Berlin] [2025-02-17 03:56:18] Тело запроса:
 {"login":"test","password":"123123","email":"fekze@mail.ru","fullname":"1"}
-[16-Feb-2025 22:52:22 Europe/Berlin] [2025-02-16 22:52:22] Таблица applicant заблокирована для записи
-[16-Feb-2025 22:52:22 Europe/Berlin] [2025-02-16 22:52:22] Таблица applicant разблокирована
-[16-Feb-2025 22:52:22 Europe/Berlin] [2025-02-16 22:52:22] Ответ от register.php:
+[17-Feb-2025 03:56:18 Europe/Berlin] [2025-02-17 03:56:18] Таблица applicant заблокирована для записи
+[17-Feb-2025 03:56:18 Europe/Berlin] [2025-02-17 03:56:18] Таблица applicant разблокирована
+[17-Feb-2025 03:56:18 Europe/Berlin] [2025-02-17 03:56:18] Ответ от register.php:
 {"success":true}
 
-[16-Feb-2025 22:52:28 Europe/Berlin] [2025-02-16 22:52:28] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:52:28 Europe/Berlin] [2025-02-16 22:52:28] Тело запроса:
+[17-Feb-2025 03:56:27 Europe/Berlin] [2025-02-17 03:56:27] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 03:56:27 Europe/Berlin] [2025-02-17 03:56:27] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:52:28 Europe/Berlin] [2025-02-16 22:52:28] Ответ от auth.php:
+[17-Feb-2025 03:56:27 Europe/Berlin] [2025-02-17 03:56:27] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 22:53:01 Europe/Berlin] [2025-02-16 22:53:01] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 22:53:01 Europe/Berlin] [2025-02-16 22:53:01] Таблицы Passport и Applicant разблокированы
-[16-Feb-2025 22:53:09 Europe/Berlin] [2025-02-16 22:53:09] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:53:09 Europe/Berlin] [2025-02-16 22:53:09] Таблица Certificate разблокирована
-[16-Feb-2025 22:55:38 Europe/Berlin] [2025-02-16 22:55:38] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 22:55:38 Europe/Berlin] [2025-02-16 22:55:38] Тело запроса:
+[17-Feb-2025 03:56:36 Europe/Berlin] [2025-02-17 03:56:36] Таблицы Passport и Applicant заблокированы для записи
+[17-Feb-2025 03:56:36 Europe/Berlin] [2025-02-17 03:56:36] Таблицы Passport и Applicant разблокированы
+[17-Feb-2025 03:56:50 Europe/Berlin] [2025-02-17 03:56:50] Таблица Certificate заблокирована для записи
+[17-Feb-2025 03:56:50 Europe/Berlin] [2025-02-17 03:56:50] Таблица Certificate разблокирована
+[17-Feb-2025 03:56:59 Europe/Berlin] [2025-02-17 03:56:59] Таблица Benefit заблокирована для записи
+[17-Feb-2025 03:56:59 Europe/Berlin] [2025-02-17 03:56:59] Таблица Benefit разблокирована
+[17-Feb-2025 04:00:44 Europe/Berlin] [2025-02-17 04:00:44] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:00:44 Europe/Berlin] [2025-02-17 04:00:44] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 22:55:39 Europe/Berlin] [2025-02-16 22:55:39] Ответ от auth.php:
+[17-Feb-2025 04:00:44 Europe/Berlin] [2025-02-17 04:00:44] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 22:55:53 Europe/Berlin] [2025-02-16 22:55:53] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:55:53 Europe/Berlin] [2025-02-16 22:55:53] Ошибка в add_certificate.php: Аттестат с номером '123123' уже существует
-[16-Feb-2025 22:55:53 Europe/Berlin] [2025-02-16 22:55:53] Таблица Certificate разблокирована после ошибки
-[16-Feb-2025 22:55:57 Europe/Berlin] [2025-02-16 22:55:57] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:55:57 Europe/Berlin] [2025-02-16 22:55:57] Таблица Certificate разблокирована
-[16-Feb-2025 22:57:38 Europe/Berlin] [2025-02-16 22:57:38] Таблица Certificate заблокирована для записи
-[16-Feb-2025 22:57:38 Europe/Berlin] [2025-02-16 22:57:38] Таблица Certificate разблокирована
-[16-Feb-2025 23:01:50 Europe/Berlin] [2025-02-16 23:01:50] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:01:50 Europe/Berlin] [2025-02-16 23:01:50] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 23:01:50 Europe/Berlin] [2025-02-16 23:01:50] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:04:02 Europe/Berlin] [2025-02-16 23:04:02] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 23:04:02 Europe/Berlin] [2025-02-16 23:04:02] Тело запроса:
-{"login":"test0","password":"123123","email":"fekze0@mail.ru","fullname":"1"}
-[16-Feb-2025 23:04:02 Europe/Berlin] [2025-02-16 23:04:02] Таблица applicant заблокирована для записи
-[16-Feb-2025 23:04:02 Europe/Berlin] [2025-02-16 23:04:02] Таблица applicant разблокирована
-[16-Feb-2025 23:04:02 Europe/Berlin] [2025-02-16 23:04:02] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 23:04:09 Europe/Berlin] [2025-02-16 23:04:09] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:04:09 Europe/Berlin] [2025-02-16 23:04:09] Тело запроса:
-{"login":"test0","password":"123123","role":"applicant"}
-[16-Feb-2025 23:04:09 Europe/Berlin] [2025-02-16 23:04:09] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:04:20 Europe/Berlin] [2025-02-16 23:04:20] Таблицы Passport и Applicant заблокированы для записи
-[16-Feb-2025 23:04:20 Europe/Berlin] [2025-02-16 23:04:20] Таблицы Passport и Applicant разблокированы
-[16-Feb-2025 23:04:40 Europe/Berlin] [2025-02-16 23:04:40] Таблица Certificate заблокирована для записи
-[16-Feb-2025 23:04:40 Europe/Berlin] [2025-02-16 23:04:40] Таблица Certificate разблокирована
-[16-Feb-2025 23:06:02 Europe/Berlin] [2025-02-16 23:06:02] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:06:02 Europe/Berlin] [2025-02-16 23:06:02] Тело запроса:
-{"login":"test1","password":"123123","role":"applicant"}
-[16-Feb-2025 23:06:02 Europe/Berlin] [2025-02-16 23:06:02] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
-
-[16-Feb-2025 23:06:05 Europe/Berlin] [2025-02-16 23:06:05] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:06:05 Europe/Berlin] [2025-02-16 23:06:05] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[16-Feb-2025 23:06:05 Europe/Berlin] [2025-02-16 23:06:05] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:06:20 Europe/Berlin] [2025-02-16 23:06:20] Запрос к register.php: POST /PK/register.php
-[16-Feb-2025 23:06:20 Europe/Berlin] [2025-02-16 23:06:20] Тело запроса:
-{"login":"test11","password":"123123","email":"fekze11@mail.ru","fullname":"1"}
-[16-Feb-2025 23:06:20 Europe/Berlin] [2025-02-16 23:06:20] Таблица applicant заблокирована для записи
-[16-Feb-2025 23:06:20 Europe/Berlin] [2025-02-16 23:06:20] Таблица applicant разблокирована
-[16-Feb-2025 23:06:20 Europe/Berlin] [2025-02-16 23:06:20] Ответ от register.php:
-{"success":true}
-
-[16-Feb-2025 23:06:27 Europe/Berlin] [2025-02-16 23:06:27] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:06:27 Europe/Berlin] [2025-02-16 23:06:27] Тело запроса:
-{"login":"test11","password":"123123","role":"applicant"}
-[16-Feb-2025 23:06:28 Europe/Berlin] [2025-02-16 23:06:28] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:06:49 Europe/Berlin] [2025-02-16 23:06:49] Таблица Certificate заблокирована для записи
-[16-Feb-2025 23:06:49 Europe/Berlin] [2025-02-16 23:06:49] Таблица Certificate разблокирована
-[16-Feb-2025 23:09:25 Europe/Berlin] [2025-02-16 23:09:25] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:09:25 Europe/Berlin] [2025-02-16 23:09:25] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 23:09:25 Europe/Berlin] [2025-02-16 23:09:25] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:11:08 Europe/Berlin] [2025-02-16 23:11:08] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:11:08 Europe/Berlin] [2025-02-16 23:11:08] Тело запроса:
+[17-Feb-2025 04:01:02 Europe/Berlin] [2025-02-17 04:01:02] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:01:02 Europe/Berlin] [2025-02-17 04:01:02] Тело запроса:
 {"login":"admin1","password":"password123","role":"employee"}
-[16-Feb-2025 23:11:08 Europe/Berlin] [2025-02-16 23:11:08] Ответ от auth.php:
+[17-Feb-2025 04:01:02 Europe/Berlin] [2025-02-17 04:01:02] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 23:27:13 Europe/Berlin] [2025-02-16 23:27:13] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:27:13 Europe/Berlin] [2025-02-16 23:27:13] Тело запроса:
-{"login":"test1","password":"123123","role":"applicant"}
-[16-Feb-2025 23:27:13 Europe/Berlin] [2025-02-16 23:27:13] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
-
-[16-Feb-2025 23:27:16 Europe/Berlin] [2025-02-16 23:27:16] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:27:16 Europe/Berlin] [2025-02-16 23:27:16] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[16-Feb-2025 23:27:16 Europe/Berlin] [2025-02-16 23:27:16] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:28:53 Europe/Berlin] [2025-02-16 23:28:53] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:28:53 Europe/Berlin] [2025-02-16 23:28:53] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[16-Feb-2025 23:28:53 Europe/Berlin] [2025-02-16 23:28:53] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:32:28 Europe/Berlin] [2025-02-16 23:32:28] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:32:28 Europe/Berlin] [2025-02-16 23:32:28] Тело запроса:
+[17-Feb-2025 04:03:59 Europe/Berlin] [2025-02-17 04:03:59] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:03:59 Europe/Berlin] [2025-02-17 04:03:59] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 23:32:28 Europe/Berlin] [2025-02-16 23:32:28] Ответ от auth.php:
+[17-Feb-2025 04:04:00 Europe/Berlin] [2025-02-17 04:04:00] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 23:32:50 Europe/Berlin] [2025-02-16 23:32:50] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:32:50 Europe/Berlin] [2025-02-16 23:32:50] Тело запроса:
-{"login":"test3","password":"123123","role":"applicant"}
-[16-Feb-2025 23:32:50 Europe/Berlin] [2025-02-16 23:32:50] Ответ от auth.php:
-{"success":true}
-
-[16-Feb-2025 23:32:58 Europe/Berlin] [2025-02-16 23:32:58] Таблица Benefit заблокирована для записи
-[16-Feb-2025 23:32:58 Europe/Berlin] [2025-02-16 23:32:58] Таблица Benefit разблокирована
-[16-Feb-2025 23:44:05 Europe/Berlin] [2025-02-16 23:44:05] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:44:05 Europe/Berlin] [2025-02-16 23:44:05] Тело запроса:
+[17-Feb-2025 04:06:31 Europe/Berlin] [2025-02-17 04:06:31] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:06:31 Europe/Berlin] [2025-02-17 04:06:31] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 23:44:05 Europe/Berlin] [2025-02-16 23:44:05] Ответ от auth.php:
+[17-Feb-2025 04:06:31 Europe/Berlin] [2025-02-17 04:06:31] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 23:44:34 Europe/Berlin] [2025-02-16 23:44:34] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:44:34 Europe/Berlin] [2025-02-16 23:44:34] Тело запроса:
-{"login":"admin1","password":"password123","role":"applicant"}
-[16-Feb-2025 23:44:34 Europe/Berlin] [2025-02-16 23:44:34] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
-
-[16-Feb-2025 23:44:40 Europe/Berlin] [2025-02-16 23:44:40] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:44:40 Europe/Berlin] [2025-02-16 23:44:40] Тело запроса:
-{"login":"admin1","password":"password123","role":"applicant"}
-[16-Feb-2025 23:44:40 Europe/Berlin] [2025-02-16 23:44:40] Ответ от auth.php:
-{"success":false,"message":"Неверный логин или пароль"}
-
-[16-Feb-2025 23:45:08 Europe/Berlin] [2025-02-16 23:45:08] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:45:08 Europe/Berlin] [2025-02-16 23:45:08] Тело запроса:
+[17-Feb-2025 04:07:59 Europe/Berlin] [2025-02-17 04:07:59] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:07:59 Europe/Berlin] [2025-02-17 04:07:59] Тело запроса:
 {"login":"admin1","password":"password123","role":"employee"}
-[16-Feb-2025 23:45:08 Europe/Berlin] [2025-02-16 23:45:08] Ответ от auth.php:
+[17-Feb-2025 04:07:59 Europe/Berlin] [2025-02-17 04:07:59] Ответ от auth.php:
 {"success":true}
 
-[16-Feb-2025 23:45:35 Europe/Berlin] [2025-02-16 23:45:35] Запрос к auth.php: POST /PK/auth.php
-[16-Feb-2025 23:45:35 Europe/Berlin] [2025-02-16 23:45:35] Тело запроса:
+[17-Feb-2025 04:10:17 Europe/Berlin] [2025-02-17 04:10:17] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:10:17 Europe/Berlin] [2025-02-17 04:10:17] Тело запроса:
+{"login":"admin1","password":"password123","role":"employee"}
+[17-Feb-2025 04:10:17 Europe/Berlin] [2025-02-17 04:10:17] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:20:41 Europe/Berlin] [2025-02-17 04:20:41] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:20:41 Europe/Berlin] [2025-02-17 04:20:41] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[16-Feb-2025 23:45:36 Europe/Berlin] [2025-02-16 23:45:36] Ответ от auth.php:
+[17-Feb-2025 04:20:42 Europe/Berlin] [2025-02-17 04:20:42] Ответ от auth.php:
 {"success":true}
 
-[17-Feb-2025 00:05:13 Europe/Berlin] [2025-02-17 00:05:13] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:05:13 Europe/Berlin] [2025-02-17 00:05:13] Тело запроса:
+[17-Feb-2025 04:29:16 Europe/Berlin] [2025-02-17 04:29:16] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:29:16 Europe/Berlin] [2025-02-17 04:29:16] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:05:13 Europe/Berlin] [2025-02-17 00:05:13] Ответ от auth.php:
+[17-Feb-2025 04:29:16 Europe/Berlin] [2025-02-17 04:29:16] Ответ от auth.php:
 {"success":true}
 
-[17-Feb-2025 00:11:24 Europe/Berlin] [2025-02-17 00:11:24] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:11:24 Europe/Berlin] [2025-02-17 00:11:24] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:11:24 Europe/Berlin] [2025-02-17 00:11:24] Ответ от auth.php:
+[17-Feb-2025 04:29:41 Europe/Berlin] [2025-02-17 04:29:41] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:29:41 Europe/Berlin] [2025-02-17 04:29:41] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 04:29:41 Europe/Berlin] [2025-02-17 04:29:41] Ответ от auth.php:
 {"success":true}
 
-[17-Feb-2025 00:14:15 Europe/Berlin] [2025-02-17 00:14:15] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:14:15 Europe/Berlin] [2025-02-17 00:14:15] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:14:15 Europe/Berlin] [2025-02-17 00:14:15] Ответ от auth.php:
+[17-Feb-2025 04:31:07 Europe/Berlin] [2025-02-17 04:31:07] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:31:07 Europe/Berlin] [2025-02-17 04:31:07] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 04:31:07 Europe/Berlin] [2025-02-17 04:31:07] Ответ от auth.php:
 {"success":true}
 
-[17-Feb-2025 00:14:40 Europe/Berlin] [2025-02-17 00:14:40] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:14:40 Europe/Berlin] [2025-02-17 00:14:40] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:14:40 Europe/Berlin] [2025-02-17 00:14:40] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:19:41 Europe/Berlin] [2025-02-17 00:19:41] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:19:41 Europe/Berlin] [2025-02-17 00:19:41] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:19:41 Europe/Berlin] [2025-02-17 00:19:41] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:22:29 Europe/Berlin] [2025-02-17 00:22:29] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:22:29 Europe/Berlin] [2025-02-17 00:22:29] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:22:29 Europe/Berlin] [2025-02-17 00:22:29] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:24:30 Europe/Berlin] [2025-02-17 00:24:30] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:24:30 Europe/Berlin] [2025-02-17 00:24:30] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:24:30 Europe/Berlin] [2025-02-17 00:24:30] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:26:34 Europe/Berlin] [2025-02-17 00:26:34] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:26:34 Europe/Berlin] [2025-02-17 00:26:34] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:26:34 Europe/Berlin] [2025-02-17 00:26:34] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:30:47 Europe/Berlin] [2025-02-17 00:30:47] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:30:47 Europe/Berlin] [2025-02-17 00:30:47] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:30:47 Europe/Berlin] [2025-02-17 00:30:47] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:34:02 Europe/Berlin] [2025-02-17 00:34:02] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:34:02 Europe/Berlin] [2025-02-17 00:34:02] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:34:02 Europe/Berlin] [2025-02-17 00:34:02] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:36:42 Europe/Berlin] [2025-02-17 00:36:42] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:36:42 Europe/Berlin] [2025-02-17 00:36:42] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:36:42 Europe/Berlin] [2025-02-17 00:36:42] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 00:39:51 Europe/Berlin] [2025-02-17 00:39:51] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 00:39:51 Europe/Berlin] [2025-02-17 00:39:51] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 00:39:51 Europe/Berlin] [2025-02-17 00:39:51] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 01:24:09 Europe/Berlin] [2025-02-17 01:24:09] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 01:24:09 Europe/Berlin] [2025-02-17 01:24:09] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 01:24:09 Europe/Berlin] [2025-02-17 01:24:09] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 01:37:33 Europe/Berlin] [2025-02-17 01:37:33] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 01:37:33 Europe/Berlin] [2025-02-17 01:37:33] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 01:37:33 Europe/Berlin] [2025-02-17 01:37:33] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 01:37:54 Europe/Berlin] [2025-02-17 01:37:54] Запрос к register.php: POST /PK/register.php
-[17-Feb-2025 01:37:54 Europe/Berlin] [2025-02-17 01:37:54] Тело запроса:
-{"login":"test111","password":"123123","email":"fekze111@mail.ru","fullname":"111"}
-[17-Feb-2025 01:37:54 Europe/Berlin] [2025-02-17 01:37:54] Таблица applicant заблокирована для записи
-[17-Feb-2025 01:37:54 Europe/Berlin] [2025-02-17 01:37:54] Таблица applicant разблокирована
-[17-Feb-2025 01:37:54 Europe/Berlin] [2025-02-17 01:37:54] Ответ от register.php:
-{"success":true}
-
-[17-Feb-2025 01:39:08 Europe/Berlin] [2025-02-17 01:39:08] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 01:39:08 Europe/Berlin] [2025-02-17 01:39:08] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 01:39:08 Europe/Berlin] [2025-02-17 01:39:08] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 01:44:38 Europe/Berlin] [2025-02-17 01:44:38] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 01:44:38 Europe/Berlin] [2025-02-17 01:44:38] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 01:44:38 Europe/Berlin] [2025-02-17 01:44:38] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 01:45:58 Europe/Berlin] [2025-02-17 01:45:58] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 01:45:58 Europe/Berlin] [2025-02-17 01:45:58] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 01:45:58 Europe/Berlin] [2025-02-17 01:45:58] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 01:54:34 Europe/Berlin] [2025-02-17 01:54:34] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 01:54:34 Europe/Berlin] [2025-02-17 01:54:34] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 01:54:34 Europe/Berlin] [2025-02-17 01:54:34] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 02:00:30 Europe/Berlin] [2025-02-17 02:00:30] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 02:00:30 Europe/Berlin] [2025-02-17 02:00:30] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 02:00:30 Europe/Berlin] [2025-02-17 02:00:30] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 02:09:35 Europe/Berlin] [2025-02-17 02:09:35] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 02:09:35 Europe/Berlin] [2025-02-17 02:09:35] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 02:09:35 Europe/Berlin] [2025-02-17 02:09:35] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 02:14:16 Europe/Berlin] [2025-02-17 02:14:16] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 02:14:16 Europe/Berlin] [2025-02-17 02:14:16] Тело запроса:
-{"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 02:14:16 Europe/Berlin] [2025-02-17 02:14:16] Ответ от auth.php:
-{"success":true}
-
-[17-Feb-2025 02:15:59 Europe/Berlin] [2025-02-17 02:15:59] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 02:15:59 Europe/Berlin] [2025-02-17 02:15:59] Тело запроса:
-{"login":"test1","password":"123123","role":"applicant"}
-[17-Feb-2025 02:15:59 Europe/Berlin] [2025-02-17 02:15:59] Ответ от auth.php:
+[17-Feb-2025 04:35:28 Europe/Berlin] [2025-02-17 04:35:28] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:35:28 Europe/Berlin] [2025-02-17 04:35:28] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"applicant"}
+[17-Feb-2025 04:35:28 Europe/Berlin] [2025-02-17 04:35:28] Ответ от auth.php:
 {"success":false,"message":"Неверный логин или пароль"}
 
-[17-Feb-2025 02:16:03 Europe/Berlin] [2025-02-17 02:16:03] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 02:16:03 Europe/Berlin] [2025-02-17 02:16:03] Тело запроса:
-{"login":"test2","password":"123123","role":"applicant"}
-[17-Feb-2025 02:16:03 Europe/Berlin] [2025-02-17 02:16:03] Ответ от auth.php:
+[17-Feb-2025 04:35:34 Europe/Berlin] [2025-02-17 04:35:34] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:35:34 Europe/Berlin] [2025-02-17 04:35:34] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"applicant"}
+[17-Feb-2025 04:35:34 Europe/Berlin] [2025-02-17 04:35:34] Ответ от auth.php:
+{"success":false,"message":"Неверный логин или пароль"}
+
+[17-Feb-2025 04:35:55 Europe/Berlin] [2025-02-17 04:35:55] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:35:55 Europe/Berlin] [2025-02-17 04:35:55] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"applicant"}
+[17-Feb-2025 04:35:55 Europe/Berlin] [2025-02-17 04:35:55] Ответ от auth.php:
+{"success":false,"message":"Неверный логин или пароль"}
+
+[17-Feb-2025 04:35:59 Europe/Berlin] [2025-02-17 04:35:59] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:35:59 Europe/Berlin] [2025-02-17 04:35:59] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 04:35:59 Europe/Berlin] [2025-02-17 04:35:59] Ответ от auth.php:
 {"success":true}
 
-[17-Feb-2025 02:17:06 Europe/Berlin] [2025-02-17 02:17:06] Запрос к auth.php: POST /PK/auth.php
-[17-Feb-2025 02:17:06 Europe/Berlin] [2025-02-17 02:17:06] Тело запроса:
+[17-Feb-2025 04:36:32 Europe/Berlin] [2025-02-17 04:36:32] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:36:32 Europe/Berlin] [2025-02-17 04:36:32] Тело запроса:
 {"login":"test","password":"123123","role":"applicant"}
-[17-Feb-2025 02:17:06 Europe/Berlin] [2025-02-17 02:17:06] Ответ от auth.php:
+[17-Feb-2025 04:36:32 Europe/Berlin] [2025-02-17 04:36:32] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:42:20 Europe/Berlin] [2025-02-17 04:42:20] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:42:20 Europe/Berlin] [2025-02-17 04:42:20] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 04:42:20 Europe/Berlin] [2025-02-17 04:42:20] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:42:31 Europe/Berlin] [2025-02-17 04:42:31] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:42:31 Europe/Berlin] [2025-02-17 04:42:31] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 04:42:31 Europe/Berlin] [2025-02-17 04:42:31] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:44:48 Europe/Berlin] [2025-02-17 04:44:48] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:44:48 Europe/Berlin] [2025-02-17 04:44:48] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 04:44:48 Europe/Berlin] [2025-02-17 04:44:48] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:47:36 Europe/Berlin] [2025-02-17 04:47:36] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:47:36 Europe/Berlin] [2025-02-17 04:47:36] Тело запроса:
+{"login":"petr_petrov","password":"password","role":"employee"}
+[17-Feb-2025 04:47:36 Europe/Berlin] [2025-02-17 04:47:36] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:54:39 Europe/Berlin] [2025-02-17 04:54:39] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:54:39 Europe/Berlin] [2025-02-17 04:54:39] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 04:54:39 Europe/Berlin] [2025-02-17 04:54:39] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 04:54:48 Europe/Berlin] [2025-02-17 04:54:48] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 04:54:48 Europe/Berlin] [2025-02-17 04:54:48] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 04:54:48 Europe/Berlin] [2025-02-17 04:54:48] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:05:55 Europe/Berlin] [2025-02-17 05:05:55] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:05:55 Europe/Berlin] [2025-02-17 05:05:55] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:05:55 Europe/Berlin] [2025-02-17 05:05:55] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:08:30 Europe/Berlin] [2025-02-17 05:08:30] Запрос к register.php: POST /PK/register.php
+[17-Feb-2025 05:08:30 Europe/Berlin] [2025-02-17 05:08:30] Тело запроса:
+{"login":"fekze","password":"123123","email":"roma.pimkin.777@gmail.com","fullname":"Пимкин Роман Павлович"}
+[17-Feb-2025 05:08:30 Europe/Berlin] [2025-02-17 05:08:30] Таблица applicant заблокирована для записи
+[17-Feb-2025 05:08:30 Europe/Berlin] [2025-02-17 05:08:30] Таблица applicant разблокирована
+[17-Feb-2025 05:08:30 Europe/Berlin] [2025-02-17 05:08:30] Ответ от register.php:
+{"success":true}
+
+[17-Feb-2025 05:08:36 Europe/Berlin] [2025-02-17 05:08:36] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:08:36 Europe/Berlin] [2025-02-17 05:08:36] Тело запроса:
+{"login":"fekze","password":"123123","role":"applicant"}
+[17-Feb-2025 05:08:37 Europe/Berlin] [2025-02-17 05:08:37] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:22:27 Europe/Berlin] [2025-02-17 05:22:27] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:22:27 Europe/Berlin] [2025-02-17 05:22:27] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:22:27 Europe/Berlin] [2025-02-17 05:22:27] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:27:36 Europe/Berlin] [2025-02-17 05:27:36] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:27:36 Europe/Berlin] [2025-02-17 05:27:36] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:27:36 Europe/Berlin] [2025-02-17 05:27:36] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:29:29 Europe/Berlin] [2025-02-17 05:29:29] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:29:29 Europe/Berlin] [2025-02-17 05:29:29] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:29:29 Europe/Berlin] [2025-02-17 05:29:29] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:35:18 Europe/Berlin] [2025-02-17 05:35:18] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:35:18 Europe/Berlin] [2025-02-17 05:35:18] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:35:18 Europe/Berlin] [2025-02-17 05:35:18] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:41:08 Europe/Berlin] [2025-02-17 05:41:08] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:41:08 Europe/Berlin] [2025-02-17 05:41:08] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:41:08 Europe/Berlin] [2025-02-17 05:41:08] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:46:26 Europe/Berlin] [2025-02-17 05:46:26] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:46:26 Europe/Berlin] [2025-02-17 05:46:26] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 05:46:26 Europe/Berlin] [2025-02-17 05:46:26] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:48:41 Europe/Berlin] [2025-02-17 05:48:41] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:48:41 Europe/Berlin] [2025-02-17 05:48:41] Тело запроса:
+{"login":"fekze","password":"123123","role":"applicant"}
+[17-Feb-2025 05:48:41 Europe/Berlin] [2025-02-17 05:48:41] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:55:27 Europe/Berlin] [2025-02-17 05:55:27] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:55:27 Europe/Berlin] [2025-02-17 05:55:27] Тело запроса:
+{"login":"fekze","password":"123123","role":"applicant"}
+[17-Feb-2025 05:55:27 Europe/Berlin] [2025-02-17 05:55:27] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:56:15 Europe/Berlin] [2025-02-17 05:56:15] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:56:15 Europe/Berlin] [2025-02-17 05:56:15] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 05:56:15 Europe/Berlin] [2025-02-17 05:56:15] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 05:56:33 Europe/Berlin] [2025-02-17 05:56:33] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 05:56:33 Europe/Berlin] [2025-02-17 05:56:33] Тело запроса:
+{"login":"fekze","password":"123123","role":"applicant"}
+[17-Feb-2025 05:56:33 Europe/Berlin] [2025-02-17 05:56:33] Ответ от auth.php:
 {"success":true}
 

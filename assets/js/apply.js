@@ -61,11 +61,32 @@ document.addEventListener("DOMContentLoaded", () => {
         // Добавляем обработчики для кнопок
         document.querySelectorAll('.apply-btn').forEach((button, index) => {
             button.addEventListener('click', () => {
-                if (index === 0) {
-                    openExamApplicationModal();
-                } else if (index === 1) {
-                    openEnrollmentApplicationModal();
-                }
+                if (role === 'applicant') {
+                    switch (index) {
+                        case 0:
+                            openExamApplicationModal();
+                            break;
+                        case 1:
+                            openEnrollmentApplicationModal();
+                            break;
+                        case 2:
+                            openMyApplicationsModal();
+                            break;
+                    }
+                }else if (role === 'employee') {
+                    switch (index) {
+                        case 0:
+                            openActiveApplicationsModal();
+                            startPolling();
+                            break;
+                        case 1:
+                            
+                            break;
+                        case 2:
+                            
+                            break;
+                    }
+                }   
             });
         });
     }
@@ -342,6 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.close-modal').forEach(button => {
         button.addEventListener('click', (e) => {
             closeModals();
+            stopPolling();
         });
     });
 
@@ -350,6 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeModals(); // Используем функцию closeModals
+                stopPolling();
             }
         });
     });
@@ -487,7 +510,179 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    
+
+    // Функция для открытия модального окна с заявками
+    async function openMyApplicationsModal() {
+        const modal = document.getElementById('my-applications-modal');
+        const container = document.getElementById('applications-container');
+
+        // Очищаем контейнер перед загрузкой новых данных
+        container.innerHTML = '';
+
+        try {
+            // Загружаем заявки пользователя
+            const response = await fetch('/PK/get_my_applications.php');
+            const data = await response.json();
+
+            if (data.success && data.applications.length > 0) {
+                for (const application of data.applications) {
+                    const item = document.createElement('div');
+                    item.className = 'application-item';
+
+                    // Перевод типа заявки
+                    const typeTranslation = translateApplicationType(application.type_application);
+
+                    // Получаем название факультета
+                    const facultyName = await getFacultyName(application.faculty_id);
+
+                    // Перевод статуса заявки
+                    const statusTranslation = translateApplicationStatus(application.status_application);
+
+                    item.innerHTML = `
+                        <p><strong>Тип заявки:</strong> ${typeTranslation}</p>
+                        <p><strong>Факультет:</strong> ${facultyName}</p>
+                        <p><strong>Статус:</strong> ${statusTranslation}</p>
+                    `;
+                    container.appendChild(item);
+                }
+            } else {
+                container.innerHTML = '<p>У вас пока нет заявок.</p>';
+            }
+        } catch (error) {
+            console.error('Ошибка при загрузке заявок:', error);
+            container.innerHTML = '<p>Произошла ошибка при загрузке заявок.</p>';
+        }
+
+        modal.classList.remove('hidden');
+    }
+
+    let pollingInterval = null; // Переменная для хранения ID интервала поллинга
+    let lastApplicationId = 0; // Для отслеживания последней заявки
+
+    // Функция для загрузки активных заявок
+    async function openActiveApplicationsModal() {
+        const modal = document.getElementById('active-applications-modal');
+        const container = document.getElementById('active-applications-container');
+
+        // Очищаем контейнер перед загрузкой новых данных
+        container.innerHTML = '';
+
+        try {
+            const response = await fetch('/PK/get_active_applications.php');
+            const data = await response.json();
+
+            if (data.success && data.applications.length > 0) {
+                data.applications.forEach(application => {
+                    addApplicationToUI(application);
+                    lastApplicationId = Math.max(lastApplicationId, application.application_id); // Обновляем ID последней заявки
+                });
+            } else {
+                container.innerHTML = '<p>Нет активных заявок.</p>';
+            }
+        } catch (error) {
+            console.error('Ошибка при загрузке активных заявок:', error);
+            container.innerHTML = '<p>Произошла ошибка при загрузке заявок.</p>';
+        }
+
+        modal.classList.remove('hidden');
+
+        // Запускаем поллинг
+        startPolling();
+    }
+
+    // Функция для добавления новой заявки в интерфейс
+    function addApplicationToUI(application) {
+        const container = document.getElementById('active-applications-container');
+
+        const item = document.createElement('div');
+        item.className = 'application-item';
+
+        // Создаем основную информацию о заявке
+        item.innerHTML = `
+            <p><strong>Факультет:</strong> ${application.name_faculty}<br></p> 
+            <p><strong>ФИО:</strong>${application.applicant_fullname}</p><br>
+            <span class="arrow-icon">▶</span>
+            <div class="additional-info" style="display: none;">
+                <p><strong>Общий балл за ЕГЭ:</strong> ${application.total_score}</p>
+                <p><strong>Общий балл за школьные предметы:</strong> ${application.school_subjects_score === null ? 'Не заполнено' : application.school_subjects_score}</p>
+                <p><strong>Общий балл за экзаменационные предметы:</strong> ${application.exam_subjects_score === null ? 'Не заполнено' : application.exam_subjects_score}</p>
+            </div>
+            <button class="consider-button" data-application-id="${application.application_id}">Взять на рассмотрение</button>
+        `;
+
+        // Добавляем обработчик для стрелки
+        const arrowIcon = item.querySelector('.arrow-icon');
+        const additionalInfo = item.querySelector('.additional-info');
+        arrowIcon.addEventListener('click', () => {
+            if (additionalInfo.style.display === 'none') {
+                additionalInfo.style.display = 'block';
+                arrowIcon.textContent = '▼';
+            } else {
+                additionalInfo.style.display = 'none';
+                arrowIcon.textContent = '▶';
+            }
+        });
+
+        // Добавляем обработчик для кнопки "Взять на рассмотрение"
+        const considerButton = item.querySelector('.consider-button');
+        considerButton.addEventListener('click', () => {
+            takeApplicationUnderConsideration(application.application_id);
+        });
+
+        container.prepend(item); // Добавляем новую заявку в начало списка
+    }
+
+    // Функция для взятия заявки на рассмотрение
+    async function takeApplicationUnderConsideration(applicationId) {
+        try {
+            const response = await fetch('/PK/take_application.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ application_id: applicationId })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                showNotification('Заявка успешно взята на рассмотрение', 'success');
+                openActiveApplicationsModal(); // Обновляем список заявок
+            } else {
+                showNotification('Ошибка: ' + data.message, 'error');
+            }
+        } catch (error) {
+            console.error('Ошибка при взятии заявки на рассмотрение:', error);
+            showNotification('Произошла ошибка. Попробуйте позже.', 'error');
+        }
+    }
+
+    // Функция для запуска поллинга
+    function startPolling() {
+        if (pollingInterval) return; // Если поллинг уже запущен, ничего не делаем
+
+        pollingInterval = setInterval(async () => {
+            try {
+                const response = await fetch(`/PK/check_new_applications.php?last_id=${lastApplicationId}`);
+                const data = await response.json();
+
+                if (data.success && data.new_applications.length > 0) {
+                    data.new_applications.forEach(application => {
+                        addApplicationToUI(application);
+                        lastApplicationId = Math.max(lastApplicationId, application.application_id); // Обновляем ID последней заявки
+                    });
+                }
+            } catch (error) {
+                console.error('Ошибка при проверке новых заявок:', error);
+            }
+        }, 5000); // Проверяем каждые 5 секунд
+    }
+
+    // Функция для остановки поллинга
+    function stopPolling() {
+        if (pollingInterval) {
+            clearInterval(pollingInterval); // Останавливаем интервал
+            pollingInterval = null; // Сбрасываем переменную
+        }
+    }
 
     // Загружаем факультеты при загрузке страницы
     loadFaculties();
@@ -518,8 +713,33 @@ function translateApplicationType(type) {
             return 'Бюджетное обучение с вступительными испытаниями';
         case 'BUDGET WITHOUT TESTS':
             return 'Бюджетное обучение без вступительных испытаний';
+        case 'ENROLLMENT PAID WITH TESTS':
+            return 'Заявка на зачисление: платное обучение с вступительными испытаниями';
+        case 'ENROLLMENT PAID WITHOUT TESTS':
+            return 'Заявка на зачисление: платное обучение без вступительных испытаний';
+        case 'ENROLLMENT BUDGET WITH TESTS':
+            return 'Заявка на зачисление: бюджетное обучение с вступительными испытаниями';
+        case 'ENROLLMENT BUDGET WITHOUT TESTS':
+            return 'Заявка на зачисление: бюджетное обучение без вступительных испытаний';
         default:
-            return type;
+            return type; // Если тип неизвестен, возвращаем оригинальное значение
+    }
+}
+
+function translateApplicationStatus(status) {
+    switch (status) {
+        case 'ACTIVE':
+            return 'Новая';
+        case 'ACCEPTED':
+            return 'Принята';
+        case 'REJECTED':
+            return 'Отклонена';
+        case 'CLOSED':
+            return 'Закрыта';
+        case 'UNDER CONSIDERATION':
+            return 'На рассмотрении';
+        default:
+            return status; // Если статус неизвестен, возвращаем оригинальное значение
     }
 }
 

@@ -46,16 +46,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->exec("LOCK TABLES applicant WRITE");
         error_log("[" . date('Y-m-d H:i:s') . "] Таблица applicant заблокирована для записи");
 
-        // // Добавляем задержку для демонстрации блокировки
-        // error_log("[" . date('Y-m-d H:i:s') . "] Добавлена задержка 10 секунд для демонстрации блокировки");
-        // sleep(10); // Задержка в 10 секунд
-
         // Проверяем, существует ли пользователь с таким логином
         $checkLoginStmt = $pdo->prepare("SELECT COUNT(*) FROM applicant WHERE login_applicant = ?");
         $checkLoginStmt->execute([$login_applicant]);
         if ($checkLoginStmt->fetchColumn() > 0) {
             throw new Exception("Логин уже используется");
         }
+
+        // // Добавляем задержку для демонстрации блокировки
+        // error_log("[" . date('Y-m-d H:i:s') . "] Добавлена задержка 10 секунд для демонстрации блокировки");
+        // sleep(10); // Задержка в 10 секунд
 
         // Проверяем, существует ли пользователь с таким email
         $checkEmailStmt = $pdo->prepare("SELECT COUNT(*) FROM applicant WHERE email = ?");

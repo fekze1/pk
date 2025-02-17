@@ -67,6 +67,7 @@ CREATE TABLE Application (
     applicant_id BIGINT,
     employee_id BIGINT,
     faculty_id BIGINT,
+    total_score BIGINT,
     FOREIGN KEY (applicant_id) REFERENCES Applicant(applicant_id),
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
     FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)

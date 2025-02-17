@@ -12,7 +12,7 @@ $employee_id = $_SESSION['user_id'];
 require_once 'includes/db.php';
 
 try {
-    // Получаем заявки для сотрудника
+    // Получаем закрытые заявки для сотрудника
     $stmt = $pdo->prepare("
         SELECT 
             a.application_id,
@@ -26,7 +26,6 @@ try {
             c.number_certificate AS certificate_number,
             c.average_grade AS school_subjects_score,
             c.average_exam_grade AS exam_subjects_score,
-            ap.priority_applicant, -- Добавляем приоритет абитуриента
             GROUP_CONCAT(b.name_benefit SEPARATOR ', ') AS benefits
         FROM Application a
         JOIN Faculty f ON a.faculty_id = f.faculty_id
@@ -34,7 +33,7 @@ try {
         LEFT JOIN Passport p ON ap.passport_id = p.passport_id
         LEFT JOIN Certificate c ON ap.certificate_id = c.certificate_id
         LEFT JOIN Benefit b ON ap.applicant_id = b.applicant_id
-        WHERE a.employee_id = ? AND a.status_application IN ('UNDER CONSIDERATION', 'SENT TO EXAMS')
+        WHERE a.employee_id = ? AND a.status_application IN ('CLOSED', 'ACCEPTED', 'REJECTED')
         GROUP BY a.application_id
     ");
     $stmt->execute([$employee_id]);
@@ -48,7 +47,7 @@ try {
     } else {
         echo json_encode([
             'success' => true,
-            'message' => 'Нет заявок для данного сотрудника',
+            'message' => 'Нет закрытых заявок для данного сотрудника',
             'applications' => []
         ]);
     }

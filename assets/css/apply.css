@@ -486,3 +486,69 @@ footer nav ul li a:hover {
     font-weight: bold;
     color: #1a73e8;
 }
+/* Стили для модального окна с закрытыми заявками */
+#closed-applications-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#closed-applications-modal .modal-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#closed-applications-modal .scrollable-container {
+    max-height: 600px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Фиксированная максимальная ширина */
+    max-height: 600px; /* Фиксированная максимальная высота */
+    overflow-y: auto; /* Внутренний скролл */
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.scrollable-container {
+    max-height: 400px; /* Максимальная высота контейнера внутри модального окна */
+    overflow-y: auto; /* Внутренний скролл */
+}

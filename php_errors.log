@@ -452,3 +452,63 @@
 [17-Feb-2025 21:49:39 Europe/Berlin] [2025-02-17 21:49:39] Ответ от auth.php:
 {"success":true}
 
+[17-Feb-2025 22:01:32 Europe/Berlin] [2025-02-17 22:01:32] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:01:32 Europe/Berlin] [2025-02-17 22:01:32] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 22:01:32 Europe/Berlin] [2025-02-17 22:01:32] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:09:13 Europe/Berlin] [2025-02-17 22:09:13] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:09:13 Europe/Berlin] [2025-02-17 22:09:13] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 22:09:13 Europe/Berlin] [2025-02-17 22:09:13] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:09:23 Europe/Berlin] [2025-02-17 22:09:23] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:09:23 Europe/Berlin] [2025-02-17 22:09:23] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 22:09:23 Europe/Berlin] [2025-02-17 22:09:23] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:19:13 Europe/Berlin] [2025-02-17 22:19:13] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:19:13 Europe/Berlin] [2025-02-17 22:19:13] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 22:19:13 Europe/Berlin] [2025-02-17 22:19:13] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:19:25 Europe/Berlin] [2025-02-17 22:19:25] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:19:25 Europe/Berlin] [2025-02-17 22:19:25] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 22:19:26 Europe/Berlin] [2025-02-17 22:19:26] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:27:11 Europe/Berlin] [2025-02-17 22:27:11] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:27:11 Europe/Berlin] [2025-02-17 22:27:11] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 22:27:11 Europe/Berlin] [2025-02-17 22:27:11] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:34:06 Europe/Berlin] [2025-02-17 22:34:06] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:34:06 Europe/Berlin] [2025-02-17 22:34:06] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 22:34:06 Europe/Berlin] [2025-02-17 22:34:06] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:34:13 Europe/Berlin] [2025-02-17 22:34:13] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:34:13 Europe/Berlin] [2025-02-17 22:34:13] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 22:34:14 Europe/Berlin] [2025-02-17 22:34:14] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:39:12 Europe/Berlin] [2025-02-17 22:39:12] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:39:12 Europe/Berlin] [2025-02-17 22:39:12] Тело запроса:
+{"login":"ivan_ivanov","password":"password","role":"employee"}
+[17-Feb-2025 22:39:12 Europe/Berlin] [2025-02-17 22:39:12] Ответ от auth.php:
+{"success":true}
+
+[17-Feb-2025 22:43:57 Europe/Berlin] [2025-02-17 22:43:57] Запрос к auth.php: POST /PK/auth.php
+[17-Feb-2025 22:43:57 Europe/Berlin] [2025-02-17 22:43:57] Тело запроса:
+{"login":"test","password":"123123","role":"applicant"}
+[17-Feb-2025 22:43:57 Europe/Berlin] [2025-02-17 22:43:57] Ответ от auth.php:
+{"success":true}
+

@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             startPolling();
                             break;
                         case 1:
-                            
+                            openClosedApplicationsModal();
                             break;
                         case 2:
                             openMyEmployeeApplicationsModal();
@@ -747,15 +747,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     const typeApplicationText = translateApplicationType(application.type_application);
 
                     // Формируем HTML для заявки
-                    item.innerHTML = `
+                    let detailsHTML = `
                         <p><strong>ФИО:</strong> ${application.applicant_fullname}</p>
                         <p><strong>Статус:</strong> ${translateApplicationStatus(application.status_application)}</p>
                         <p><strong>Тип заявки:</strong> ${typeApplicationText}</p>
                         <p><strong>Факультет:</strong> ${application.name_faculty}</p>
                         <p><strong>Баллы ЕГЭ:</strong> ${application.total_score}</p>
                         <p><strong>Льготы:</strong> ${application.benefits || 'Нет льгот'}</p>
-                        <span class="arrow-icon">▶</span>
                     `;
+
+                    item.innerHTML = detailsHTML + '<span class="arrow-icon">▶</span>';
 
                     // Обработчик для стрелки
                     const arrowIcon = item.querySelector('.arrow-icon');
@@ -766,7 +767,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     container.appendChild(item);
                 });
             } else {
-                container.innerHTML = '<p>У вас нет присвоенных заявок</p>';
+                container.innerHTML = '<p>У вас нет заявок со статусом "На рассмотрении" или "Направлена на экзамены".</p>';
             }
         } catch (error) {
             console.error('Ошибка при загрузке заявок:', error);
@@ -802,6 +803,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Баллы ЕГЭ:</strong> ${application.total_score}</p>
             <p><strong>Льготы:</strong> ${application.benefits || 'Нет льгот'}</p>
         `;
+
+        // Если это заявка на зачисление, добавляем приоритет
+        if (application.type_application.includes('ENROLLMENT')) {
+            detailsHTML += `<p><strong>Приоритет:</strong> ${application.priority_applicant || 'Не присвоен'}</p>`;
+        }
 
         detailsContainer.innerHTML = detailsHTML;
 
@@ -918,6 +924,83 @@ document.addEventListener("DOMContentLoaded", () => {
             showNotification('Произошла ошибка. Попробуйте позже.', 'error');
         }
     }
+
+    // Функция для открытия модального окна с закрытыми заявками
+    function openClosedApplicationsModal() {
+        const modal = document.createElement('div');
+        modal.id = 'closed-applications-modal';
+        modal.className = 'modal-overlay';
+
+        const modalContainer = document.createElement('div');
+        modalContainer.className = 'modal-container larger-modal';
+
+        const modalTitle = document.createElement('h2');
+        modalTitle.textContent = 'Закрытые заявки';
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'close-modal';
+        closeButton.textContent = 'Закрыть';
+
+        const applicationsContainer = document.createElement('div');
+        applicationsContainer.className = 'scrollable-container';
+
+        // Добавляем заголовок, контейнер и кнопку закрытия
+        modalContainer.appendChild(modalTitle);
+        modalContainer.appendChild(applicationsContainer);
+        modalContainer.appendChild(closeButton);
+
+        modal.appendChild(modalContainer);
+        document.body.appendChild(modal);
+
+        // Загружаем закрытые заявки
+        loadClosedApplications(applicationsContainer);
+
+        // Закрытие модального окна при клике вне формы или на кнопку "Закрыть"
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === closeButton) {
+                modal.remove();
+            }
+        });
+    }
+
+    // Функция для загрузки закрытых заявок сотрудника
+    async function loadClosedApplications(container) {
+        try {
+            const response = await fetch('/PK/get_closed_applications.php');
+            const data = await response.json();
+
+            if (data.success && data.applications.length > 0) {
+                container.innerHTML = ''; // Очищаем контейнер
+
+                data.applications.forEach(application => {
+                    const item = document.createElement('div');
+                    item.className = 'application-item';
+
+                    // Переводим тип заявки в понятный текст
+                    const typeApplicationText = translateApplicationType(application.type_application);
+
+                    // Формируем HTML для заявки
+                    item.innerHTML = `
+                        <p><strong>ФИО:</strong> ${application.applicant_fullname}</p>
+                        <p><strong>Статус:</strong> ${translateApplicationStatus(application.status_application)}</p>
+                        <p><strong>Тип заявки:</strong> ${typeApplicationText}</p>
+                        <p><strong>Факультет:</strong> ${application.name_faculty}</p>
+                        <p><strong>Баллы ЕГЭ:</strong> ${application.total_score}</p>
+                        <p><strong>Льготы:</strong> ${application.benefits || 'Нет льгот'}</p>
+                    `;
+
+                    container.appendChild(item);
+                });
+            } else {
+                container.innerHTML = '<p>У вас нет закрытых заявок.</p>';
+            }
+        } catch (error) {
+            console.error('Ошибка при загрузке закрытых заявок:', error);
+            container.innerHTML = '<p>Произошла ошибка при загрузке закрытых заявок.</p>';
+        }
+    }
+
+
     // Загружаем факультеты при загрузке страницы
     loadFaculties();
 
